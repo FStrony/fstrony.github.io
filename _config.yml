@@ -23,22 +23,22 @@ projects:
   #   - stars
   limit: 9
   exclude:
-    forks: true
+    forks: false
     projects:
     # - repo-name
 
-# social_media:
+social_media:
   # behance: your_username
   # dribbble: your_username
-  # facebook: your_username
+  facebook: FStrony
   # hackerrank: your_username
-  # linkedin: your_username
+  linkedin: fstrony
   # medium: @your_username
   # stackoverflow: your_user_id
   # telegram: your_username
   # twitter: your_username
   # youtube: your_username
-  # instagram: your_username
+  instagram: _fstrony
   # unsplash: your_username
   # vk: your_username
 
