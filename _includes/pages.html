@@ -1,0 +1,11 @@
+<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Important Stuff</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Things about me.</p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+  {% for page in site.pages %}
+    {% if site.important_pages contains page.title %}
+    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+      {% include page-card.html %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>

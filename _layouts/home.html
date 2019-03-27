@@ -34,15 +34,11 @@
       <div class="mx-auto" style="max-width: 900px;">
         {% unless content == ""  %}
           <div class="f4 {% if site.style == 'dark' %}text-white{% endif %} mb-6">
-            {{ content }}
+            {{ content | markdownify}}
           </div>
         {% endunless %}
 
-        {% include projects.html %}
-
-        {% if site.topics %}
-          {% include interests.html %}
-        {% endif %}
+        {% include pages.html %}       
 
         {% unless posts_total == 0 %}
           {% include thoughts.html %}
