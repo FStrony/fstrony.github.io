@@ -42,16 +42,17 @@ social_media:
   # dribbble: your_username
   facebook: FStrony
   # hackerrank: your_username
+  instagram: _fstrony
+  # keybase: your_username
   linkedin: fstrony
-  # medium: @your_username
+  # medium: your_username
   # stackoverflow: your_user_id
   telegram: FStrony
   # twitter: your_username
-  # youtube: your_username
-  instagram: _fstrony
   # unsplash: your_username
   # vk: your_username
   # website: http://your_website_url
+  # youtube: your_username
 
 topics:
   - name: MongoDB
