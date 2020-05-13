@@ -1,0 +1,11 @@
+.logo_inst{
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  float:left;
+} 
+
+.education__item--details{
+  margin-left: 110px;
+  text-align: justify;
+}
