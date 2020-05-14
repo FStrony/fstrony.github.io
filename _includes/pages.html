@@ -1,11 +1,39 @@
-<h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Important Stuff</h2>
+<h2 {% if site.style == 'dark' %}class="text-white" {% endif %}>Important Stuff</h2>
 <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Things about me.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
   {% for page in site.pages %}
-    {% if site.important_pages contains page.title %}
-    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
-      {% include page-card.html %}
-    </div>
-    {% endif %}
+  {% if site.important_pages contains page.title %}
+  <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+    {% include page-card.html %}
+  </div>
+  {% endif %}
   {% endfor %}
+
+  <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+    <div
+      class="height-full text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3">
+      <div class="d-flex flex-justify-between flex-items-start mb-1">
+        <h1 class="f4 lh-condensed mb-1">
+          <a href="assets/resumes/FernandoSantos_PT-BR.pdf" target="_blank">
+            {% octicon repo height:20 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo %}{{ "Resume PT-BR" }}
+          </a>
+        </h1>
+      </div>
+      <div class="text-gray mb-2 ws-normal">Check it out!</div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+    <div
+      class="height-full text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3">
+      <div class="d-flex flex-justify-between flex-items-start mb-1">
+        <h1 class="f4 lh-condensed mb-1">
+          <a href="assets/resumes/FernandoSantos_EN.pdf" target="_blank">
+            {% octicon repo height:20 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo %}{{ "Resume EN" }}
+          </a>
+        </h1>
+      </div>
+      <div class="text-gray mb-2 ws-normal">Check it out!</div>
+    </div>
+  </div>
 </div>

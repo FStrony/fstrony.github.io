@@ -1,6 +1,6 @@
 ---
 title: Education
-description: My academic experience
+description: My academic experience.
 permalink: /education
 layout: default
 ---
