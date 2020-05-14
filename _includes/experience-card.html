@@ -1,0 +1,20 @@
+<div class="result-card__contents">
+  <img class="logo_inst" alt="{{ prof.company }}" aria-hidden="true" src="{{ prof.company_logo }}">
+  <h3 class="result-card__title">
+    {% if prof.company_url %}
+    <a href="{{ prof.company_url }}" target="_blank">{{ prof.company }}</a>
+    {% else %}
+    {{ prof.company }}
+    {% endif %}
+  </h3>
+  <h4 class="result-card__subtitle">{{ prof.position }}</h4>
+  <div class="result-card__meta">
+    <p class="education__item education__item--duration">
+      <span>{{ prof.period }}</span><br>
+      <span class="inst_location">{{ prof.location }}</span>
+    </p>
+    <div class="education__item--details">
+      <p>{{ prof.position_description }}</p>
+    </div>
+  </div>
+</div>

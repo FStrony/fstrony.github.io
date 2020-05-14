@@ -1,0 +1,6 @@
+<h2 {% if site.style == 'dark' %}class="text-white" {% endif %}>Experience</h2>
+<p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">My professional experience.</p>
+
+{% for prof in site.profession %}
+  {% include experience-card.html %}
+{% endfor %}

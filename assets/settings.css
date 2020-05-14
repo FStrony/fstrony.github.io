@@ -1,12 +1,16 @@
 .logo_inst{
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   margin-right: 10px;
   border-radius: 5px;
   float:left;
 } 
 
 .education__item--details{
-  margin-left: 110px;
+  margin-left: 80px;
   text-align: justify;
+}
+
+.inst_location{
+  margin-left: 80px;
 }

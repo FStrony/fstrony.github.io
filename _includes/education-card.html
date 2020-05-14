@@ -1,6 +1,12 @@
 <div class="result-card__contents">
   <img class="logo_inst" alt="{{ edu.institution }}" aria-hidden="true" src="{{ edu.institution_logo }}">
-  <h3 class="result-card__title"><a href="{{ edu.institution_url }}" target="_blank">{{ edu.institution }}</a></h3>
+  <h3 class="result-card__title">
+    {% if edu.institution_url %}
+    <a href="{{ edu.institution_url }}" target="_blank">{{ edu.institution }}</a>
+    {% else %}
+    {{ edu.institution }}
+    {% endif %}
+  </h3>
   <h4 class="result-card__subtitle">{{ edu.course }}</h4>
   <div class="result-card__meta">
     <p class="education__item education__item--duration"><span>{{ edu.period }}</span></p>
