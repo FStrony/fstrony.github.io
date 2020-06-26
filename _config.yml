@@ -22,7 +22,7 @@ defaults:
       layout: "post"
 
 important_pages:
-  - About me  
+  - About me
   - Experience
   - Education
   - My Projects
@@ -92,7 +92,7 @@ topics:
     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
 
   - name: Java
-    web_url: https://github.com/topics/java    
+    web_url: https://github.com/topics/java
     image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/java/java.png
 
   - name: .NET
@@ -149,7 +149,7 @@ education:
     period: 2010 - 2011
     institution_url: http://www.etecpaulistano.com.br
     course_description: "The technical course in computer gave me basic knowledge to segment the area of information technology, which are: <br>• Logic Programming.<br>• Assembly of structures database (MySQL, SQLServer).<br>• Knowledge in programming languages: PHP, C and C ++.<br>• Knowledge to applications and graphical interfaces: HTML, CSS, JavaScript and JQuery.<br>• Knowledge for installation and maintenance of computers."
-    institution_logo: "/assets/images/etec.png"    
+    institution_logo: "/assets/images/etec.png"
 
   - institution: E.E Professor Augusto Ribeiro de Carvalho
     course: High School
@@ -162,7 +162,7 @@ profession:
   - company: Helix Code
     location: São Paulo Area, Brazil
     position: Software Developer
-    period: Jan 2019 – Present
+    period: Jan 2019 – Jun 2020 • 1 year 6 months
     position_description: "• Implementation of features for an internal process management system using ASP.NET framework, MS SQL Server, Razor and JQuery.<br>• Web System Development for managing real estate assets using ASP.NET Core and C# for the REST API, MongoDB as the database, and React for the front-end. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development to support the Administrative, Commercial and Financial sector using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development for Infrastructure and Construction Projects, based on Project Management standards using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)"
     company_logo: "/assets/images/no-logo.png"
 
@@ -187,4 +187,4 @@ profession:
     position: Software Development - Internship
     period: May 2012 – Aug 2012 • 4 months
     position_description: "• Worked developing SQL Server queries and making standardisation of the database.<br>• Support in implementation of qualification processes.<br>• Support for loading database for campaigns in a contact centre environment."
-    company_logo: "/assets/images/no-logo.png"    
+    company_logo: "/assets/images/no-logo.png"
