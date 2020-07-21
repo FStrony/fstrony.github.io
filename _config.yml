@@ -159,15 +159,23 @@ education:
     institution_logo: "/assets/images/no-logo.png"
 
 profession:
+  - company: Olos Tecnologia
+    location: São Paulo, São Paulo, Brazil
+    position: Mid-Level Programmer Analyst
+    period: Jul 2020 – Present
+    position_description: "&nbsp;"
+    company_url: http://www.olos.com.br
+    company_logo: "/assets/images/olos.png"
+
   - company: Helix Code
-    location: São Paulo Area, Brazil
+    location: São Paulo, São Paulo, Brazil
     position: Software Developer
     period: Jan 2019 – Jun 2020 • 1 year 6 months
     position_description: "• Implementation of features for an internal process management system using ASP.NET framework, MS SQL Server, Razor and JQuery.<br>• Web System Development for managing real estate assets using ASP.NET Core and C# for the REST API, MongoDB as the database, and React for the front-end. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development to support the Administrative, Commercial and Financial sector using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development for Infrastructure and Construction Projects, based on Project Management standards using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)"
     company_logo: "/assets/images/no-logo.png"
 
   - company: Locaweb
-    location: São Paulo Area, Brazil
+    location: São Paulo, São Paulo, Brazil
     position: Junior Software Development
     period: Jun 2013 – Oct 2014 • 1 year 5 months
     company_url: http://www.locaweb.com.br
@@ -175,7 +183,7 @@ profession:
     company_logo: "/assets/images/locaweb.jpg"
 
   - company: BRQ
-    location: São Paulo Area, Brazil
+    location: São Paulo, São Paulo, Brazil
     position: Software Development - Internship
     period: Jan 2013 – May 2013 • 5 months
     company_url: http://www.brq.com
@@ -183,7 +191,7 @@ profession:
     company_logo: "/assets/images/brq.png"
 
   - company: System Marketing Consulting Ltda
-    location: São Paulo Area, Brazil
+    location: São Paulo, São Paulo, Brazil
     position: Software Development - Internship
     period: May 2012 – Aug 2012 • 4 months
     position_description: "• Worked developing SQL Server queries and making standardisation of the database.<br>• Support in implementation of qualification processes.<br>• Support for loading database for campaigns in a contact centre environment."
