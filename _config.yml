@@ -171,7 +171,7 @@ profession:
     location: São Paulo, São Paulo, Brazil
     position: Mid-Level Programmer Analyst
     period: Jul 2020 – Aug 2020 • 2 months
-    position_description: "• Development of APIs for systematic integrations, using .NET Framework, C# and MS SQL Server.<br>• Windows Services development to import and export files automatically via FTP, using .NET Framework, C# and MS SQL Server."
+    position_description: "• Development of APIs for systematic integrations, using .NET Framework, C# and MS SQL Server.<br>• Development of Windows Service applications to import and export files automatically via FTP, using .NET Framework, C# and MS SQL Server."
     company_url: http://www.olos.com.br
     company_logo: "/assets/images/olos.png"
 
