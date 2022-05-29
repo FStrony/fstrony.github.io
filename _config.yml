@@ -179,7 +179,7 @@ profession:
     location: São Paulo, São Paulo, Brazil
     position: Software Developer
     period: Jan 2019 – Jun 2020 • 1 year 6 months
-    position_description: "• Implementation of features for an internal process management system using ASP.NET framework, MS SQL Server, Razor and JQuery.<br>• Web System Development for managing real estate assets using ASP.NET Core and C# for the REST API, MongoDB as the database, and React for the front-end. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development to support the Administrative, Commercial and Financial sector using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development for Infrastructure and Construction Projects, based on Project Management standards using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)"
+    position_description: "• Implementation of features for an internal process management system using ASP.NET framework, MS SQL Server, Razor and JQuery.<br>• Web System Development for managing real estate assets using ASP.NET Core and C# for the REST API, MongoDB as the database, and React for the front-end. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development to support the Administrative, Commercial and Financial sectors using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)<br>• Web System Development for Infrastructure and Construction Projects, based on Project Management standards using ASP.NET framework, MS SQL Server, Razor and JQuery. (Custom software development for Dox Planejamento, Gestão e Desenvolvimento Imobiliário Ltda.)"
     company_logo: "/assets/images/no-logo.png"
 
   - company: Locaweb
@@ -187,7 +187,7 @@ profession:
     position: Junior Software Development
     period: Jun 2013 – Oct 2014 • 1 year 5 months
     company_url: http://www.locaweb.com.br
-    position_description: "• Responsible for optimizing performance and developing customizations of the products of the Email team (Email Panel, Locamail and Email Exchange).<br>• Development using the technologies: Ruby on Rail, MySQL, PHP, Redis and Roundcube Webmail.<br>• Worked for 6 months in the Enterprise Applications team using the technologies: C # and Microsoft Dynamics CRM."
+    position_description: "• Responsible for optimizing performance and developing customizations of the products of the Email team (Email Panel, Locamail and Email Exchange).<br>• Development using the technologies: Ruby on Rail, MySQL, PHP, Redis and Roundcube Webmail.<br>• Worked for six months in the Enterprise Applications team using C# and Microsoft Dynamics CRM technologies."
     company_logo: "/assets/images/locaweb.jpg"
 
   - company: BRQ
@@ -195,12 +195,12 @@ profession:
     position: Software Development - Internship
     period: Jan 2013 – May 2013 • 5 months
     company_url: http://www.brq.com
-    position_description: "• Worked as .NET developer and developing Oracle and PL/SQL queries.<br>• Responsible for program specifications, design of solution design diagram, development of analytical artefacts.<br>• Creation of test scripts and executing tests."
+    position_description: "• Worked as a .NET developer and developed Oracle and PL/SQL queries.<br>• Responsible for program specifications, design of solution design diagram, and development of analytical artefacts.<br>• Creation of test scripts and executing tests."
     company_logo: "/assets/images/brq.png"
 
   - company: System Marketing Consulting Ltda
     location: São Paulo, São Paulo, Brazil
     position: Software Development - Internship
     period: May 2012 – Aug 2012 • 4 months
-    position_description: "• Worked developing SQL Server queries and making standardisation of the database.<br>• Support in implementation of qualification processes.<br>• Support for loading database for campaigns in a contact centre environment."
+    position_description: "• Worked on developing SQL Server queries and making standardisation of the database.<br>• Support in implementation of qualification processes.<br>• Support for loading database for campaigns in a contact centre environment."
     company_logo: "/assets/images/no-logo.png"
