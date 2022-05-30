@@ -113,7 +113,7 @@ education:
     course: MBA in Software Engineering
     period: 2019 - 2020
     institution_url: https://www.fiap.com.br
-    course_description: "The program encompasses all aspects of software (Business, Development, Integration, Data and Cloud), through concepts and standards such as: TOGAF, Design Thinking, JS, Python, Java, Kafka, Microservices, Cloud (AWS and Azure), Artificial Intelligence, UML, Ionic, Big Data &amp; Data Lake, NoSQL x SQL, among other technologies."
+    course_description: "The program encompasses all aspects of software (Business, Development, Integration, Data and Cloud) through concepts and standards such as TOGAF, Design Thinking, JS, Python, Java, Kafka, Microservices, Cloud (AWS and Azure), Artificial Intelligence, UML, Ionic, Big Data &amp; Data Lake, NoSQL x SQL, among other technologies."
     institution_logo: "/assets/images/fiap.png"
 
   - institution: Faculdades Metropolitanas Unidas
@@ -124,31 +124,31 @@ education:
     institution_logo: "/assets/images/fmu.png"
 
   - institution: Greenwich College
-    course: Bachelor of Information Systems
+    course: Diploma of Project Management
     period: 2017 - 2018
     institution_url: https://www.greenwichcollege.edu.au
-    course_description: "Units / Modules enrolled:<br>• BSBPMG511 Manage project scope<br>• BSBPMG512 Manage project time<br>• BSBPMG513 Manage project quality<br>• BSBPMG514 Manage project cost<br>• BSBPMG515 Manage project human resources<br>• BSBPMG516 Manage project information and communication<br>• BSBPMG517 Manage project risk<br>• BSBPMG521 Manage project integration<br>• BSBINN502 Build and sustain an innovative work environment<br>• BSBMGT516 Facilitate Continuous Improvement<br>• BSBSUS501 Develop workplace policy and procedures for sustainability<br>• BSBWOR502 Lead and manage team effectiveness"
+    course_description: "Grade: BSB51415<br><br>Units / Modules enrolled:<br>• BSBPMG511 Manage project scope<br>• BSBPMG512 Manage project time<br>• BSBPMG513 Manage project quality<br>• BSBPMG514 Manage project cost<br>• BSBPMG515 Manage project human resources<br>• BSBPMG516 Manage project information and communication<br>• BSBPMG517 Manage project risk<br>• BSBPMG521 Manage project integration<br>• BSBINN502 Build and sustain an innovative work environment<br>• BSBMGT516 Facilitate Continuous Improvement<br>• BSBSUS501 Develop workplace policy and procedures for sustainability<br>• BSBWOR502 Lead and manage team effectiveness"
     institution_logo: "/assets/images/greenwich.jpeg"
 
   - institution: Holmes Institute
     course: Diploma of Information Technology (Software Development)
     period: 2016 - 2017
     institution_url: https://www.holmes.edu.au
-    course_description: "Units / Modules enrolled:<br>• ICAPRG529A Apply testing techniques for software development<br>• BSBPMG513A Manage project quality<br>• ICAPRG502A Manage a project using software management tools<br>• ICAPRG504A Deploy an application to a production environment<br>• ICAPRG503A Debug and monitor applications<br>• ICAPRG527A Apply intermediate object-oriented language skills<br>• ICAPRG501A Apply advanded object-oriented language skills<br>• ICAPRG520A Validate an application design agains specifications<br>• ICAPRG509A Build using rapid application development<br>• ICASAS502A Establish and maintain client user liaison"
+    course_description: "Grade: ICA50711<br><br>Units / Modules enrolled:<br>• ICAPRG529A Apply testing techniques for software development<br>• BSBPMG513A Manage project quality<br>• ICAPRG502A Manage a project using software management tools<br>• ICAPRG504A Deploy an application to a production environment<br>• ICAPRG503A Debug and monitor applications<br>• ICAPRG527A Apply intermediate object-oriented language skills<br>• ICAPRG501A Apply advanced object-oriented language skills<br>• ICAPRG520A Validate an application design against specifications<br>• ICAPRG509A Build using rapid application development<br>• ICASAS502A Establish and maintain client user liaison"
     institution_logo: "/assets/images/holmes.png"
 
   - institution: FIAP
     course: Associate degree of Systems Analysis and Development
     period: 2012 - 2014
     institution_url: https://www.fiap.com.br
-    course_description: "Associate Degree Program that offers specialised professional education, developing specific skills and competencies to enter quickly the job market. <br>The course was focused on: <br>• Developing and maintaining systems in Java (JSE, JEE, JME), Microsoft .NET/C#, Android and Apple iOS.<br>• Development for a relational database (Oracle, also using PL/SQL).<br>• Creating Internet applications using standards, frameworks and language to WEB development (JSF, JSP, JSTL, HTML, XML, JavaScript and JQuery).<br>• Part of project management was focused on the practices: SCRUM, PMI, COBIT, ITIL and CMMI."
+    course_description: "The Associate Degree Program offers specialized professional training, developing specific skills and competencies to enter the job market quickly.<br>The course was focused on:<br>• Development and maintenance of systems in Java (JSE, JEE, JME), Microsoft .NET/C#, Android and Apple iOS.<br>• Development of relational databases (Oracle, also using PL/SQL).<br>• Creation of WEB applications using standards, frameworks and language for WEB development (JSF, JSP, JSTL, HTML, XML, JavaScript and JQuery).<br>• Project management was focused on the following practices: SCRUM, PMI, COBIT, ITIL and CMMI."
     institution_logo: "/assets/images/fiap.png"
 
   - institution: ETEC Paulistano - Escola Técnica Estadual de São Paulo
     course: Computer Technician Course
     period: 2010 - 2011
     institution_url: http://www.etecpaulistano.com.br
-    course_description: "The technical course in computer gave me basic knowledge to segment the area of information technology, which are: <br>• Logic Programming.<br>• Assembly of structures database (MySQL, SQLServer).<br>• Knowledge in programming languages: PHP, C and C ++.<br>• Knowledge to applications and graphical interfaces: HTML, CSS, JavaScript and JQuery.<br>• Knowledge for installation and maintenance of computers."
+    course_description: "The technical course in computer gave me basic knowledge to segment the area of information technology, which are: <br>• Logic Programming.<br>• Assembly of structures database (MySQL, SQLServer).<br>• Knowledge in programming languages​​: PHP, C and C ++.<br>• Knowledge to applications and graphical interfaces: HTML, CSS, JavaScript and JQuery.<br>• Knowledge for installation and maintenance of computers."
     institution_logo: "/assets/images/etec.png"
 
   - institution: E.E Professor Augusto Ribeiro de Carvalho
