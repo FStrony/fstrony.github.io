@@ -164,7 +164,7 @@ profession:
     location: São Paulo, São Paulo, Brazil
     position: Software Engineer
     period: Sep 2020 – Present
-    position_description:  "&nbsp;"
+    position_description:  "• I worked as a consultant for <a href='http://globalstar.com' target='_blank'>Globalstar</a>.<br>• Development of new features, maintenance and bug fixes in customer portals (SPOT MyAccount, Globalstar MyAccount and IoT/Simplex MyAccount), customer care portal and related systems.<br>• Gathering requirements and estimating new projects.<br>• Creation and maintenance of Oracle Databases.<br>• Development of APIs and batches in Java with Spring boot.<br>• Development of frontend applications using PHP and AngularJS."
     company_url: https://www.sequenza.com.br
     company_logo: "/assets/images/sequenza.png"
 
