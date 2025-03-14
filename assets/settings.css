@@ -14,3 +14,8 @@
 .inst_location{
   margin-left: 80px;
 }
+
+.text_justified{
+  text-align: justify;
+  text-justify: inter-word;
+}
