@@ -118,28 +118,28 @@ education:
     institution_logo: "/assets/images/fiap.png"
 
   - institution: Faculdades Metropolitanas Unidas
-    course: Bachelor of Information Systems
+    course: Bachelor's in Information Systems
     period: 2019 - 2021
     institution_url: https://portal.fmu.br
     course_description: "The course provided a comprehensive education in IT, combining systems development and technology management. Key skills acquired:<br/>• <strong>Systems Development:</strong> Building and maintaining systems with <strong>Java</strong>, <strong>PHP</strong>, <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>MySQL</strong>, <strong>SQL Server</strong>, and tools like <strong>NetBeans</strong> and <strong>Android Studio</strong>.<br/>• <strong>IT Management:</strong> Knowledge in IT governance, practices such as <strong>COBIT</strong>, <strong>ITIL</strong>, <strong>CMMI</strong>, and tools like <strong>MS Project</strong> and <strong>Bizagi Modeler</strong>.<br/>• <strong>Infrastructure and Security:</strong> Skills in networking, information security, and virtualisation with <strong>Cisco Packet Tracer</strong> and <strong>Virtual Box</strong>.<br/>• <strong>Project and Database Management:</strong> Designing database projects and integrating IT departments to optimise business processes.<br/><br/>The course prepared me to work in various IT areas, from development to management, focusing on innovative solutions aligned with market needs."
     institution_logo: "/assets/images/fmu.png"
 
   - institution: Greenwich College
-    course: Diploma of Project Management
+    course: Diploma in Project Management
     period: 2017 - 2018
     institution_url: https://www.greenwichcollege.edu.au
     course_description: "Course Code: BSB51415<br/><br/>Comprehensive course in project management, focusing on international practices. Modules include:<br/>• Scope, time, quality, and cost management.<br/>• Human resources, communication, and stakeholder management.<br/>• Risk identification, mitigation, and process integration.<br/>• Development of policies for innovation and sustainability.<br/>• Team leadership and continuous improvement implementation.<br/><br/>Gained essential skills to lead complex projects, ensuring delivery within schedule, budget, and quality standards."
     institution_logo: "/assets/images/greenwich.jpeg"
 
   - institution: Holmes Institute
-    course: Diploma of Information Technology (Software Development)
+    course: Diploma in Information Technology (Software Development)
     period: 2016 - 2017
     institution_url: https://www.holmes.edu.au
     course_description: "Course Code: ICA50711<br/><br/>Course focused on software development, combining practical and theoretical modules. Key skills acquired:<br/>• <strong>Testing and Quality:</strong> Application of testing techniques and quality management in software projects.<br/>• <strong>Project Management:</strong> Use of tools for project planning, execution, and monitoring.<br/>• <strong>Development and Deployment:</strong> Building, debugging, and deploying applications in production environments.<br/>• <strong>Object-Oriented Programming:</strong> Advanced OOP skills for developing robust solutions.<br/>• <strong>Client Interaction:</strong> Establishing and maintaining contact with users and clients.<br/><br/>The course provided a solid foundation for working in software development, focusing on best practices and delivering high-quality solutions."
     institution_logo: "/assets/images/holmes.png"
 
   - institution: FIAP
-    course: Associate degree of Systems Analysis and Development
+    course: Associate degree in Systems Analysis and Development
     period: 2012 - 2014
     institution_url: https://www.fiap.com.br
     course_description: "Course focused on systems development and project management, with skills in:<br/>• <strong>Software Development:</strong> Building and maintaining systems in <strong>Java (JSE, JEE, JME)</strong>, <strong>.NET/C#,</strong> <strong>Android</strong>, and <strong>iOS</strong>.<br/>• <strong>Databases:</strong> Development and management of relational databases with <strong>Oracle</strong> and <strong>PL/SQL</strong>.<br/>• <strong>Web Development:</strong> Creating web applications with <strong>JSF</strong>, <strong>JSP</strong>, <strong>JSTL</strong>, <strong>HTML</strong>, <strong>XML</strong>, <strong>JavaScript</strong>, and <strong>JQuery</strong>.<br/>• <strong>Project Management:</strong> Application of practices such as <strong>SCRUM</strong>, <strong>PMI</strong>, <strong>COBIT</strong>, <strong>ITIL</strong>, and <strong>CMMI</strong>.<br/><br/>The course provided a solid foundation for working in the IT market, focusing on innovative solutions aligned with industry best practices."
