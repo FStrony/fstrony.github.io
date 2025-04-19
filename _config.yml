@@ -110,6 +110,13 @@ resumes:
     description: Check it out!
 
 education:
+  - institution: Impacta Tecnologia
+    course: MBA in Cloud Computing & DevOps
+    period: 2025 - 2026
+    institution_url: https://www.impacta.edu.br
+    course_description: ""
+    institution_logo: "/assets/images/impacta_tecnologia_logo.jpg"
+
   - institution: FIAP
     course: MBA in Software Engineering
     period: 2019 - 2020
