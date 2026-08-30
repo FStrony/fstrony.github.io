@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+const stack = [
+  ['Core', ['Java','Spring Boot','Spring Security','Spring Batch']],
+  ['Architecture', ['Microservices','REST APIs','Software Architecture','System Design','Event-Driven Architecture','Design Patterns']],
+  ['Cloud & DevOps', ['AWS','SNS','SQS','Docker','Terraform','Ansible','CI/CD','Jenkins','Bamboo','GitHub']],
+  ['Data', ['Oracle','SQL Server','MySQL','MongoDB','PL/SQL','JPA','Hibernate']],
+  ['Reliability', ['Observability','SRE','DevSecOps','Automated Testing','Selenium']],
+  ['Legacy / Full-stack', ['C# / .NET','ASP.NET','Ruby on Rails','PHP','React','AngularJS']]
+];
+const projects = [
+  {no:'01', label:'GLOBALSTAR · PROFESSIONAL', title:'Satellite Communication Platforms', intro:'Critical software systems and customer-facing platforms in a global satellite communications environment.', problem:'Connect applications, APIs, legacy components and asynchronous services while keeping critical workflows reliable.', approach:'Java and Spring Boot services, REST APIs, AWS SNS/SQS integrations and Oracle-based workflows, alongside incremental legacy modernization.', role:'Senior Software Engineer / Technical Consultant', tags:['Java','Spring Boot','AWS','SNS / SQS','Oracle']},
+  {no:'02', label:'HELIX CODE · INDEPENDENT', title:'Real Estate Asset Management', intro:'A web platform created to manage real estate assets and support business operations.', problem:'Bring operational information into one application while supporting different workflows and business rules.', approach:'React frontend with a REST API built in ASP.NET Core and C#, using MongoDB for persistence.', role:'Full-stack development · Requirements · Testing · Support', tags:['C#','ASP.NET Core','React','MongoDB']},
+  {no:'03', label:'LOCaWEB · PROFESSIONAL', title:'Email & Enterprise Platforms', intro:'Products and internal systems across email, PaaS and enterprise applications.', problem:'Deliver product features inside established systems while maintaining reliability and compatibility.', approach:'Ruby on Rails, PHP, MySQL and Redis, plus Microsoft Dynamics CRM and Roundcube customization.', role:'Software Developer · Features · Maintenance · Automated testing', tags:['Ruby on Rails','PHP','MySQL','Redis']}
+];
+---
+<Layout>
+  <section class="hero" id="home">
+    <div class="hero-top"><span>Senior Software Engineer</span><span>Florianópolis · Brazil</span><span>EN / PT</span></div>
+    <div class="hero-main">
+      <div class="hero-name"><span>Fernando</span><span>Augusto</span><span class="accent">Santos.</span></div>
+      <img class="hero-portrait" src="/profile.png" alt="Professional portrait of Fernando Augusto Santos" loading="eager" />
+    </div>
+    <div class="hero-bottom">
+      <p>Backend engineer focused on Java, Spring Boot, AWS and software architecture.</p>
+      <div class="hero-links"><a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/FStrony" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#work">Selected work ↓</a></div>
+    </div>
+  </section>
+
+  <section class="manifesto" id="about">
+    <div class="side-label">01 / Profile</div>
+    <div>
+      <p class="statement">I build software systems where <em>architecture, reliability and business context</em> matter as much as the code.</p>
+      <div class="manifesto-grid">
+        <p>I'm a Senior Software Engineer and Technical Consultant with 10+ years of experience across backend engineering, APIs, integrations, databases, cloud and legacy modernization.</p>
+        <p>Today, my strongest focus is Java, Spring Boot, AWS, microservices and asynchronous integrations. My broader background across .NET, Ruby, PHP and frontend systems helps me understand the whole system rather than a single layer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="numbers">
+    <div><strong>10+</strong><span>years in software</span></div>
+    <div><strong>6</strong><span>years at Sequenza</span></div>
+    <div><strong>4</strong><span>years in Australia</span></div>
+    <div><strong>8</strong><span>IELTS overall band</span></div>
+  </section>
+
+  <section class="section" id="engineering">
+    <div class="side-label">02 / Engineering</div>
+    <div>
+      <p class="kicker">Technical profile</p>
+      <h2 class="section-title">Deep where it counts.<br /><span>Broad by experience.</span></h2>
+      <div class="stack-list">
+        {stack.map(([title, items], i) => <div class="stack-row"><span class="meta">0{i+1}</span><h3>{title}</h3><div class="stack-items">{items.map(item => <span class="tag">{item}</span>)}</div></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="side-label">03 / Experience</div>
+    <div>
+      <p class="kicker">Career</p>
+      <h2 class="section-title">Different stacks.<br /><span>Same engineering mindset.</span></h2>
+      <div class="timeline">
+        <article><time class="meta">2020 — NOW</time><div><h3>Senior Software Engineer</h3><p class="company">Sequenza IT Solutions · Technical Consultant for Globalstar</p><p>Development, maintenance and modernization of critical systems and customer-facing platforms in satellite communications.</p></div><span class="role meta">JAVA · SPRING BOOT · AWS</span></article>
+        <article><time class="meta">2020</time><div><h3>Mid-level Programmer Analyst</h3><p class="company">OLOS Tecnologia</p><p>Backend APIs, system integrations and automated FTP file-processing services using C#, .NET Framework and SQL Server.</p></div><span class="role meta">C# · .NET · SQL SERVER</span></article>
+        <article><time class="meta">2019 — 2020</time><div><h3>Software Developer</h3><p class="company">Helix Code · Independent</p><p>Custom full-stack systems, including a real estate asset management platform built with ASP.NET Core, React and MongoDB.</p></div><span class="role meta">FULL-STACK · REACT · .NET</span></article>
+        <article><time class="meta">2014 — 2018</time><div><h3>Professional Development</h3><p class="company">Sydney, Australia</p><p>Software development, project management and English immersion in an international environment.</p></div><span class="role meta">AUSTRALIA · ENGLISH</span></article>
+        <article><time class="meta">2013 — 2014</time><div><h3>Junior Software Developer</h3><p class="company">Locaweb</p><p>Development and maintenance across Email, PaaS and Enterprise Applications using Ruby on Rails, PHP, C#, MySQL and Redis.</p></div><span class="role meta">RUBY · PHP · C#</span></article>
+        <article><time class="meta">2012 — 2013</time><div><h3>Software Development Intern</h3><p class="company">BRQ / System Marketing Consulting</p><p>Early-career experience with .NET, Oracle, PL/SQL and SQL Server across development, documentation, testing and data operations.</p></div><span class="role meta">.NET · ORACLE · SQL</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="side-label">04 / Selected Work</div>
+    <div>
+      <p class="kicker">Case studies</p>
+      <h2 class="section-title">Real problems.<br /><span>Technical decisions.</span></h2>
+      {projects.map(project => <article class="case">
+        <div class="case-top"><span class="case-no">{project.no}</span><span class="eyebrow">{project.label}</span></div>
+        <div class="case-main">
+          <div><h3>{project.title}</h3><p class="case-intro">{project.intro}</p><div class="tags">{project.tags.map(t => <span class="tag">{t}</span>)}</div></div>
+          <div class="case-details"><div><small>THE PROBLEM</small><p>{project.problem}</p></div><div><small>THE APPROACH</small><p>{project.approach}</p></div><div><small>MY ROLE</small><p>{project.role}</p></div></div>
+        </div>
+      </article>)}
+      <p class="confidential">Professional case studies are intentionally described at a high level to respect client and employer confidentiality.</p>
+    </div>
+  </section>
+
+  <section class="section international">
+    <div class="side-label">05 / International</div>
+    <div><div class="country">SYDNEY<span>,</span><br />AUSTRALIA</div><p class="large-copy">Four years abroad shaped my communication, autonomy and ability to work across cultures. I completed software development and project management studies while living in Sydney.</p><div class="language-line"><span>IELTS General Training</span><strong>Band 8</strong><span>EN / PT</span></div></div>
+  </section>
+
+  <section class="section">
+    <div class="side-label">06 / Education</div>
+    <div><p class="kicker">Education</p><h2 class="section-title">Continuous learning,<br /><span>grounded in engineering.</span></h2><div class="education-list">
+      <article><span class="meta">2025 — 2026</span><h3>MBA · Cloud Computing & DevOps</h3><p>Impacta Tecnologia</p></article>
+      <article><span class="meta">2019 — 2020</span><h3>MBA · Software Engineering</h3><p>FIAP</p></article>
+      <article><span class="meta">2019 — 2021</span><h3>Bachelor's Degree · Information Systems</h3><p>FMU</p></article>
+      <article><span class="meta">2017 — 2018</span><h3>Diploma · Project Management</h3><p>Greenwich College</p></article>
+      <article><span class="meta">2016 — 2017</span><h3>Diploma · Information Technology (Software Development)</h3><p>Holmes Institute, Australia</p></article>
+    </div></div>
+  </section>
+
+  <section class="section beyond">
+    <div class="side-label">07 / Beyond Code</div>
+    <div><p class="kicker">A different kind of field work</p><h2>Volunteer diver.<br /><span>Marine conservation.</span></h2><p>During my years in Australia, I volunteered with the PADI AWARE Foundation, supporting marine conservation initiatives, underwater debris collection and environmental awareness efforts.</p></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="side-label">08 / Contact</div>
+    <div><p class="kicker">Open to the right challenge</p><h2>Let's build<br /><span>something useful.</span></h2><p>I'm interested in Senior Software Engineering and Technical Consulting opportunities, especially in international, distributed and remote teams.</p><div class="contact-links"><a href="mailto:fstrony@gmail.com">Email ↗</a><a href="tel:+5511972625933">Phone ↗</a><a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/FStrony" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+  </section>
+</Layout>
