@@ -1,0 +1,86 @@
+---
+const {
+  title = 'Fernando Augusto Santos | Senior Software Engineer',
+  description = 'Senior Software Engineer specializing in Java, Spring Boot, AWS, microservices, backend architecture and cloud integrations.',
+} = Astro.props;
+const canonical = Astro.url.href;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="/og.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.svg" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Fernando Augusto Santos',
+      jobTitle: 'Senior Software Engineer',
+      url: 'https://fstrony.github.io',
+      email: 'mailto:fstrony@gmail.com',
+      telephone: '+55 11 97262-5933',
+      address: { '@type': 'PostalAddress', addressLocality: 'Florianópolis', addressCountry: 'BR' },
+      sameAs: ['https://www.linkedin.com/in/fstrony/', 'https://github.com/FStrony'],
+      knowsAbout: ['Java','Spring Boot','AWS','Microservices','Software Architecture','Backend Engineering','REST APIs','Event-Driven Architecture','System Design','C#','.NET']
+    })} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home"><span>FA</span> / FERNANDO AUGUSTO</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#engineering">Engineering</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="top-cta" href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+    </header>
+    <div class="mobile-panel" aria-hidden="true">
+      <a href="#about">About</a><a href="#engineering">Engineering</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#contact">Contact</a>
+    </div>
+    <main><slot /></main>
+    <footer class="footer">
+      <span>Fernando Augusto Santos</span>
+      <span>Senior Software Engineer · Florianópolis, Brazil</span>
+      <span>© 2026</span>
+    </footer>
+    <script>
+      const btn = document.querySelector('.menu-toggle');
+      const panel = document.querySelector('.mobile-panel');
+      btn?.addEventListener('click', () => {
+        const open = panel?.classList.toggle('open');
+        btn?.setAttribute('aria-expanded', String(!!open));
+        panel?.setAttribute('aria-hidden', String(!open));
+      });
+      panel?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => panel.classList.remove('open')));
+    </script>
+  </body>
+</html>
+<style is:global>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#f4f1e9;--ink:#121419;--muted:#6f736d;--line:#d8d4ca;--accent:#244d5f;--paper:#fbfaf6;--max:1220px}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55} a{color:inherit;text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:4px}
+.site-header{height:74px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 32px;position:sticky;top:0;z-index:50;background:rgba(244,241,233,.94);backdrop-filter:blur(14px)}
+.brand,.top-cta,.desktop-nav a,.kicker,.side-label,.meta,.tag,.mono,.eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase}.brand{font-weight:700}.brand span{color:var(--accent);letter-spacing:0}.desktop-nav{display:flex;gap:28px}.desktop-nav a,.top-cta{color:#4e524d}.top-cta{justify-self:end}.menu-toggle{display:none}
+.hero{width:min(var(--max),calc(100% - 64px));margin:auto;min-height:calc(100vh - 74px);display:grid;grid-template-rows:auto 1fr auto;padding:34px 0 48px}.hero-top{display:flex;justify-content:space-between;color:var(--muted)}.hero-main{display:grid;grid-template-columns:1fr 280px;align-items:center;gap:60px}.hero-name{font-family:'Space Grotesk';font-size:clamp(70px,11.5vw,155px);line-height:.82;letter-spacing:-.085em;font-weight:500}.hero-name span{display:block}.hero-name .accent{color:var(--accent)}.hero-portrait{width:230px;height:290px;border-radius:2px;object-fit:cover;object-position:center top;filter:saturate(.96);justify-self:end}.hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:40px;border-top:1px solid var(--line);padding-top:18px}.hero-bottom p{max-width:620px;font-size:20px;line-height:1.2;margin:0}.hero-links{justify-self:end;display:flex;gap:22px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;align-items:start}.section,.contact,.manifesto,.numbers,.footer{width:min(var(--max),calc(100% - 64px));margin:auto}.section,.manifesto,.contact{border-top:1px solid var(--line);padding:135px 0;display:grid;grid-template-columns:180px 1fr;gap:44px}.section-title{font-family:'Space Grotesk';font-size:clamp(48px,6vw,88px);letter-spacing:-.06em;line-height:.9;font-weight:500;margin:12px 0 65px}.section-title span{color:var(--muted)}
+.manifesto{border-top:0}.statement{font-family:'Space Grotesk';font-size:clamp(38px,5.3vw,72px);line-height:.97;letter-spacing:-.055em;margin:0;max-width:1000px}.statement em{font-style:normal;color:var(--accent)}.manifesto-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:65px;max-width:900px}.manifesto-grid p{color:#5a5e58;max-width:480px}.numbers{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.numbers div{padding:26px 20px;border-right:1px solid var(--line)}.numbers div:first-child{padding-left:0}.numbers div:last-child{border-right:0}.numbers strong{font-family:'Space Grotesk';font-size:52px;line-height:1;letter-spacing:-.07em;display:block}.numbers span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.stack-list,.timeline,.education-list{border-top:1px solid var(--line)}.stack-row{display:grid;grid-template-columns:55px 210px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}.stack-row h3{font-size:15px;margin:0}.stack-items{display:flex;flex-wrap:wrap;gap:7px}.tag{border:1px solid #c8c4ba;padding:5px 8px;font-family:monospace;letter-spacing:.04em;color:#4d514c}
+.timeline article{display:grid;grid-template-columns:150px 1fr 200px;gap:32px;padding:32px 0;border-bottom:1px solid var(--line)}.timeline h3{font-family:'Space Grotesk';font-size:26px;letter-spacing:-.03em;margin:0}.timeline .company{color:var(--muted);font-size:13px;margin:2px 0 14px}.timeline article p:not(.company){color:#5b5e59;max-width:650px;margin:0;font-size:14px}.role{justify-self:end;text-align:right;color:var(--muted)}
+.case{border-top:1px solid var(--line);padding:52px 0}.case-top{display:flex;gap:18px;align-items:center;margin-bottom:35px}.case-no{font-family:'Space Grotesk';font-size:12px}.case-main{display:grid;grid-template-columns:1fr 1fr;gap:70px}.case h3{font-family:'Space Grotesk';font-size:clamp(38px,4.8vw,64px);line-height:.92;letter-spacing:-.06em;margin:0 0 20px}.case-intro{font-size:18px;color:#565b56;max-width:520px}.case-details{border-left:1px solid var(--line);padding-left:35px;display:grid;gap:19px}.case-details small{font-size:9px;letter-spacing:.11em;color:var(--muted)}.case-details p{margin:5px 0 0;font-size:13px;color:#5a5e58;max-width:510px}.confidential{color:var(--muted);font-size:11px;margin-top:30px}
+.international{align-items:end}.country{font-family:'Space Grotesk';font-size:clamp(70px,11vw,150px);line-height:.78;letter-spacing:-.09em}.country span{color:var(--accent)}.large-copy{font-size:19px;color:#5a5e58;max-width:650px;margin:40px 0}.language-line{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;max-width:650px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.language-line strong{font-family:'Space Grotesk';font-size:18px;letter-spacing:0}
+.education-list article{display:grid;grid-template-columns:140px 1fr 180px;gap:20px;padding:26px 0;border-bottom:1px solid var(--line);align-items:center}.education-list h3{font-family:'Space Grotesk';font-size:24px;letter-spacing:-.03em;margin:0}.education-list p{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:0;text-align:right}.beyond h2,.contact h2{font-family:'Space Grotesk';font-size:clamp(48px,7.5vw,105px);line-height:.87;letter-spacing:-.07em;font-weight:500;margin:15px 0 30px}.beyond h2 span,.contact h2 span{color:var(--muted)}.beyond p{max-width:650px;color:#5a5e58}.contact{border-top:1px solid var(--line);padding-top:140px;padding-bottom:170px}.contact>div:last-child>p{max-width:600px;color:#5b5e59;font-size:17px}.contact-links{display:flex;gap:26px;margin-top:34px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.footer{border-top:1px solid var(--line);padding:24px 0 35px;display:flex;justify-content:space-between;color:var(--muted)}
+.mobile-panel{display:none}
+@media(max-width:820px){.site-header{height:64px;grid-template-columns:1fr auto;padding:0 20px}.desktop-nav,.top-cta{display:none}.menu-toggle{display:block;border:0;background:none;font:inherit;font-size:10px;text-transform:uppercase}.mobile-panel.open{display:flex;position:fixed;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);z-index:40;padding:20px;flex-direction:column;gap:17px}.hero,.section,.contact,.manifesto,.numbers,.footer{width:calc(100% - 40px)}.hero{min-height:auto;padding:28px 0 45px}.hero-main{grid-template-columns:1fr;gap:35px;padding:13vh 0}.hero-name{font-size:21vw}.hero-portrait{width:180px;height:220px;justify-self:start}.hero-bottom{grid-template-columns:1fr}.hero-links{justify-self:start;flex-wrap:wrap}.section,.manifesto,.contact{grid-template-columns:1fr;gap:25px;padding:90px 0}.section-title{font-size:51px;margin-bottom:50px}.manifesto-grid{grid-template-columns:1fr;gap:10px;margin-top:45px}.statement{font-size:43px}.numbers{grid-template-columns:1fr 1fr}.numbers div{padding:22px 14px}.numbers div:first-child{padding-left:0}.numbers strong{font-size:42px}.stack-row{grid-template-columns:34px 1fr}.stack-items{grid-column:2}.timeline article{grid-template-columns:1fr;gap:9px}.role{justify-self:start;text-align:left}.case-main{grid-template-columns:1fr;gap:30px}.case-details{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.country{font-size:20vw}.language-line{flex-wrap:wrap;gap:12px;justify-content:flex-start}.education-list article{grid-template-columns:1fr;gap:7px}.education-list p{text-align:left}.contact h2{font-size:19vw}.footer{flex-direction:column;gap:9px;font-size:10px}}
+</style>
