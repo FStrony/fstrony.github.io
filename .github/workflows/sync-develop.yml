@@ -1,0 +1,52 @@
+name: Sync develop with main
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-develop
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch branches
+        run: |
+          git fetch origin main develop
+
+      - name: Verify fast-forward
+        run: |
+          if git merge-base --is-ancestor origin/develop origin/main; then
+            echo "develop can be fast-forwarded to main."
+          else
+            echo "ERROR: develop has diverged from main."
+            echo "No changes were pushed."
+            exit 1
+          fi
+
+      - name: Fast-forward develop
+        run: |
+          git switch --create develop --track origin/develop
+          git merge --ff-only origin/main
+
+      - name: Push develop
+        run: git push origin develop
