@@ -8,13 +8,19 @@ on:
         required: true
         type: string
 
+      dry_run:
+        description: "Validate the release without creating a tag or GitHub Release"
+        required: true
+        default: true
+        type: boolean
+
 permissions:
   contents: write
 
 jobs:
   release:
-    if: github.ref == 'refs/heads/main'
     name: Create release
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +35,7 @@ jobs:
           VERSION: ${{ inputs.version }}
         run: |
           if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "Invalid semantic version: $VERSION"
+            echo "::error::Invalid semantic version: $VERSION"
             echo "Expected format: MAJOR.MINOR.PATCH"
             exit 1
           fi
@@ -41,13 +47,24 @@ jobs:
           VERSION: ${{ inputs.version }}
         run: |
           if git rev-parse "v$VERSION" >/dev/null 2>&1; then
-            echo "Tag v$VERSION already exists."
+            echo "::error::Tag v$VERSION already exists."
             exit 1
           fi
 
           echo "Tag v$VERSION is available."
 
+      - name: Dry run
+        if: inputs.dry_run
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          echo "Dry run enabled."
+          echo "No tag or GitHub Release will be created."
+          echo "Would create tag: v$VERSION"
+          echo "Would create GitHub Release: v$VERSION"
+
       - name: Create tag
+        if: ${{ !inputs.dry_run }}
         env:
           VERSION: ${{ inputs.version }}
         run: |
@@ -55,6 +72,7 @@ jobs:
           git push origin "v$VERSION"
 
       - name: Create GitHub Release
+        if: ${{ !inputs.dry_run }}
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
