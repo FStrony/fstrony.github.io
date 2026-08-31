@@ -5,7 +5,7 @@ import { translations } from '../content/translations';
 const content = translations.en;
 const jsonTranslations = JSON.stringify(translations);
 ---
-<Layout title={content.site.title} description={content.site.description} locale={content.htmlLang} nav={content.nav} footer={content.footer}>
+<Layout title={content.site.title} description={content.site.description} locale={content.htmlLang} nav={content.nav} footer={content.footer} translations={jsonTranslations}>
   <section class="hero" id="home" data-section="home">
     <div class="hero-top">
       <span data-i18n="hero.role">{content.hero.role}</span>
@@ -144,60 +144,3 @@ const jsonTranslations = JSON.stringify(translations);
   </section>
 </Layout>
 
-<script define:vars={{ jsonTranslations }}>
-  const translations = JSON.parse(jsonTranslations);
-  const localeStorageKey = 'portfolio-locale';
-
-  const getValue = (object, path) => path.split('.').reduce((value, key) => value?.[key], object);
-
-  const setText = (element, value) => {
-    if (typeof value === 'string' && element.textContent !== value) element.textContent = value;
-  };
-
-  const applyLocale = (locale) => {
-    const content = translations[locale] ?? translations.en;
-
-    document.documentElement.lang = content.htmlLang;
-    document.title = content.site.title;
-    document.querySelector('meta[name="description"]')?.setAttribute('content', content.site.description);
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', content.site.title);
-    document.querySelector('meta[property="og:description"]')?.setAttribute('content', content.site.description);
-
-    document.querySelectorAll('[data-i18n]').forEach((element) => {
-      const value = getValue(content, element.dataset.i18n);
-      if (typeof value === 'string') setText(element, value);
-    });
-
-    document.querySelectorAll('[data-i18n-html]').forEach((element) => {
-      const value = getValue(content, element.dataset.i18nHtml);
-      if (typeof value === 'string') element.innerHTML = value;
-    });
-
-    document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
-      for (const definition of element.dataset.i18nAttr.split(',')) {
-        const [attribute, path] = definition.split(':');
-        const value = getValue(content, path);
-        if (attribute && typeof value === 'string') element.setAttribute(attribute.trim(), value);
-      }
-    });
-
-    document.querySelector('.language-toggle')?.setAttribute('aria-pressed', String(locale === 'pt'));
-    document.querySelector('.language-toggle')?.setAttribute('aria-label', locale === 'pt' ? 'Switch to English' : 'Mudar para português');
-    document.querySelector('.language-toggle')?.replaceChildren(document.createTextNode(content.hero.language));
-
-    document.querySelector('.top-cta')?.replaceChildren(document.createTextNode(content.nav.linkedin));
-    document.querySelector('.menu-toggle')?.replaceChildren(document.createTextNode(content.nav.menu));
-    document.querySelector('.menu-toggle')?.setAttribute('aria-label', content.nav.openMenu);
-    document.querySelector('.desktop-nav')?.setAttribute('aria-label', content.sections.contact === 'Contato' ? 'Navegação principal' : 'Main navigation');
-
-    localStorage.setItem(localeStorageKey, locale);
-  };
-
-  const initialLocale = localStorage.getItem(localeStorageKey) || 'en';
-  applyLocale(initialLocale);
-
-  document.querySelector('[data-locale-toggle]')?.addEventListener('click', () => {
-    const currentLocale = localStorage.getItem(localeStorageKey) || 'en';
-    applyLocale(currentLocale === 'en' ? 'pt' : 'en');
-  });
-</script>
