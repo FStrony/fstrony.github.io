@@ -28,3 +28,9 @@ npm run build
 ## Design
 
 Editorial/minimal portfolio focused on Senior Software Engineer positioning, with Java / Spring Boot / AWS as the primary technical signal, engineering principles, professional case studies, international experience, curated skills, LinkedIn/GitHub CTAs, and SEO metadata.
+
+## Internationalisation
+
+The site supports English (British English) and Brazilian Portuguese from the same static page. The language switcher updates the page content in the browser and persists the selected language in local storage.
+
+Source content is separated from the page markup in `src/content/translations.ts` so the visual structure remains shared between locales.
