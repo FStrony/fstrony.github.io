@@ -43,7 +43,7 @@ The website is intentionally designed as a small but production-oriented project
 - ⚙️ GitHub Actions CI/CD
 - 🚀 Automated deployment to GitHub Pages
 - 🔄 Automatic `main → develop` synchronisation
-- 🏷️ Manual Semantic Versioning release automation
+- 🏷️ Manual Semantic Versioning release automation with automated tagging
 - 📦 Reusable architecture suitable for forks
 - 🔒 Protected production branch with mandatory quality gates
 
@@ -302,7 +302,10 @@ Semantic version validation
 Duplicate tag check
   │
   ▼
-Tag vX.Y.Z
+Git identity configuration
+  │
+  ▼
+Annotated tag vX.Y.Z
   │
   ▼
 GitHub Release
@@ -310,6 +313,8 @@ GitHub Release
   ▼
 Generated release notes
 ```
+
+The workflow configures a dedicated GitHub Actions bot identity before creating the annotated release tag, ensuring that releases can be created consistently in the CI environment.
 
 A dry-run mode is available to validate the release process without creating a tag or GitHub Release.
 
