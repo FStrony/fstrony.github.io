@@ -25,6 +25,7 @@ const jsonTranslations = JSON.stringify(translations);
       <div class="hero-links">
         <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
         <a href="https://github.com/FStrony" target="_blank" rel="noreferrer">GitHub ↗</a>
+         <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-i18n="resume.label" data-i18n-attr="href:resume.url">{content.resume.label}</a>
         <a href="#work" data-i18n="hero.selectedWork">{content.hero.selectedWork}</a>
       </div>
     </div>
@@ -139,6 +140,7 @@ const jsonTranslations = JSON.stringify(translations);
         <a href="tel:+5511972625933" data-i18n="contact.links.phone">{content.contact.links.phone}</a>
         <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-i18n="contact.links.linkedin">{content.contact.links.linkedin}</a>
         <a href="https://github.com/FStrony" target="_blank" rel="noreferrer" data-i18n="contact.links.github">{content.contact.links.github}</a>
+        <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-i18n="resume.label" data-i18n-attr="href:resume.url">{content.resume.label}</a>
       </div>
     </div>
   </section>
