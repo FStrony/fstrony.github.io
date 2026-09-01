@@ -111,6 +111,16 @@ The language switcher changes the content without maintaining separate copies of
 
 The localisation approach is based on a shared presentation layer with locale-specific content, keeping the codebase compact and avoiding duplicated page structures.
 
+### Resume / CV
+
+The portfolio provides localised Resume/CV documents that follow the selected site language:
+
+- 🇬🇧 English: [`/resume/Fernando_Augusto_Santos_Resume_EN.pdf`](/resume/Fernando_Augusto_Santos_Resume_EN.pdf)
+
+- 🇧🇷 Português (Brasil): [`/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf`](/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf)
+
+The Resume/CV link updates with the language switcher and opens the corresponding PDF in a new tab.
+
 ---
 
 ## ♿ Accessibility
@@ -412,6 +422,7 @@ If you fork this repository, **replace the personal material before publishing i
 [ ] Replace email and phone number
 [ ] Replace LinkedIn and GitHub links
 [ ] Replace Open Graph / social preview assets
+[ ] Replace Resume/CV documents
 [ ] Replace favicon and branding
 [ ] Review English content
 [ ] Review Portuguese content
@@ -437,7 +448,7 @@ This is the first place to look when adapting the portfolio for another person.
 
 ### Assets
 
-Personal and branding assets are stored under:
+Personal, branding and Resume/CV assets are stored under:
 
 ```text
 public/
@@ -449,6 +460,9 @@ Typical files include:
 profile.png
 favicon.svg
 og.svg
+resume/
+├── Fernando_Augusto_Santos_Resume_EN.pdf
+└── Fernando_Augusto_Santos_CV_PT-BR.pdf
 ```
 
 ### GitHub Pages
@@ -559,6 +573,9 @@ rather than adding tools that increase maintenance without improving the project
 │       └── sync-develop.yml
 │
 ├── public/
+│   ├── resume/
+│   │   ├── Fernando_Augusto_Santos_Resume_EN.pdf
+│   │   └── Fernando_Augusto_Santos_CV_PT-BR.pdf
 │   ├── favicon.svg
 │   ├── og.svg
 │   └── profile.png
