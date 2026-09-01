@@ -27,6 +27,10 @@ export const translations = {
       description: 'Backend engineer focused on Java, Spring Boot, AWS and software architecture.',
       selectedWork: 'Selected work ↓',
     },
+    resume: {
+      label: 'Download Resume ↗',
+      url: '/resume/Fernando_Augusto_Santos_Resume_EN.pdf',
+    },
     sections: {
       profile: 'Profile',
       engineering: 'Engineering',
@@ -156,6 +160,10 @@ export const translations = {
       portraitAlt: 'Retrato profissional de Fernando Augusto Santos',
       description: 'Engenheiro backend com foco em Java, Spring Boot, AWS e arquitetura de software.',
       selectedWork: 'Projetos selecionados ↓',
+    },
+    resume: {
+      label: 'Baixar Currículo ↗',
+      url: '/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf',
     },
     sections: {
       profile: 'Perfil',
