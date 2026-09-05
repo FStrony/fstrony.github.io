@@ -5,8 +5,8 @@ const {
   locale = 'en',
   nav = { about: 'About', engineering: 'Engineering', experience: 'Experience', work: 'Work', contact: 'Contact', linkedin: 'LinkedIn ↗', menu: 'Menu', openMenu: 'Open menu' },
   footer = { role: 'Senior Software Engineer · Florianópolis, Brazil', copyright: '© 2026' },
-  translations = '{}',
 } = Astro.props;
+
 const canonical = Astro.url.href;
 ---
 <!doctype html>
@@ -61,63 +61,6 @@ const canonical = Astro.url.href;
       <span data-i18n="footer.copyright">{footer.copyright}</span>
     </footer>
 
-  <script define:vars={{ translations }}>
-    const localeTranslations = JSON.parse(translations);
-    const localeStorageKey = 'portfolio-locale';
-
-    const getValue = (object, path) => path.split('.').reduce((value, key) => value?.[key], object);
-
-    const setText = (element, value) => {
-      if (typeof value === 'string' && element.textContent !== value) element.textContent = value;
-    };
-
-    const applyLocale = (locale) => {
-      const content = localeTranslations[locale] ?? localeTranslations.en;
-
-      document.documentElement.lang = content.htmlLang;
-      document.title = content.site.title;
-      document.querySelector('meta[name="description"]')?.setAttribute('content', content.site.description);
-      document.querySelector('meta[property="og:title"]')?.setAttribute('content', content.site.title);
-      document.querySelector('meta[property="og:description"]')?.setAttribute('content', content.site.description);
-
-      document.querySelectorAll('[data-i18n]').forEach((element) => {
-        const value = getValue(content, element.dataset.i18n);
-        if (typeof value === 'string') setText(element, value);
-      });
-
-      document.querySelectorAll('[data-i18n-html]').forEach((element) => {
-        const value = getValue(content, element.dataset.i18nHtml);
-        if (typeof value === 'string') element.innerHTML = value;
-      });
-
-      document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
-        for (const definition of element.dataset.i18nAttr.split(',')) {
-          const [attribute, path] = definition.split(':');
-          const value = getValue(content, path);
-          if (attribute && typeof value === 'string') element.setAttribute(attribute.trim(), value);
-        }
-      });
-
-      document.querySelector('.language-toggle')?.setAttribute('aria-pressed', String(locale === 'pt'));
-      document.querySelector('.language-toggle')?.setAttribute('aria-label', locale === 'pt' ? 'Switch to English' : 'Mudar para português');
-      document.querySelector('.language-toggle')?.replaceChildren(document.createTextNode(content.hero.language));
-
-      document.querySelector('.top-cta')?.replaceChildren(document.createTextNode(content.nav.linkedin));
-      document.querySelector('.menu-toggle')?.replaceChildren(document.createTextNode(content.nav.menu));
-      document.querySelector('.menu-toggle')?.setAttribute('aria-label', content.nav.openMenu);
-      document.querySelector('.desktop-nav')?.setAttribute('aria-label', content.sections.contact === 'Contato' ? 'Navegação principal' : 'Main navigation');
-
-      localStorage.setItem(localeStorageKey, locale);
-    };
-
-    const initialLocale = localStorage.getItem(localeStorageKey) || 'en';
-    applyLocale(initialLocale);
-
-    document.querySelector('[data-locale-toggle]')?.addEventListener('click', () => {
-      const currentLocale = localStorage.getItem(localeStorageKey) || 'en';
-      applyLocale(currentLocale === 'en' ? 'pt' : 'en');
-    });
-  </script>
     <script>
       const btn = document.querySelector('.menu-toggle');
       const panel = document.querySelector('.mobile-panel');
@@ -142,7 +85,7 @@ const canonical = Astro.url.href;
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.55} a{color:inherit;text-decoration:none} a:hover{text-decoration:underline;text-underline-offset:4px}
 .site-header{height:74px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 32px;position:sticky;top:0;z-index:50;background:rgba(244,241,233,.94);backdrop-filter:blur(14px)}
 .brand,.top-cta,.desktop-nav a,.kicker,.side-label,.meta,.tag,.mono,.eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase}.brand{font-weight:700}.brand span{color:var(--accent);letter-spacing:0}.desktop-nav{display:flex;gap:28px}.desktop-nav a,.top-cta{color:#4e524d}.top-cta{justify-self:end}.menu-toggle{display:none}
-.hero{width:min(var(--max),calc(100% - 64px));margin:auto;min-height:calc(100vh - 74px);display:grid;grid-template-rows:auto 1fr auto;padding:34px 0 48px}.hero-top{display:flex;justify-content:space-between;color:var(--muted);align-items:center}.language-toggle{border:1px solid #c8c4ba;background:transparent;color:inherit;padding:6px 9px;font:inherit;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.language-toggle:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}.hero-main{display:grid;grid-template-columns:1fr 280px;align-items:center;gap:60px}.hero-name{font-family:'Space Grotesk';font-size:clamp(70px,11.5vw,155px);line-height:.82;letter-spacing:-.085em;font-weight:500}.hero-name span{display:block}.hero-name .accent{color:var(--accent)}.hero-portrait{width:230px;height:290px;border-radius:2px;object-fit:cover;object-position:center top;filter:saturate(.96);justify-self:end}.hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:40px;border-top:1px solid var(--line);padding-top:18px}.hero-bottom p{max-width:620px;font-size:20px;line-height:1.2;margin:0}.hero-links{justify-self:end;display:flex;gap:22px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;align-items:start}.section,.contact,.manifesto,.numbers,.footer{width:min(var(--max),calc(100% - 64px));margin:auto}.section,.manifesto,.contact{border-top:1px solid var(--line);padding:135px 0;display:grid;grid-template-columns:180px 1fr;gap:44px}.section-title{font-family:'Space Grotesk';font-size:clamp(48px,6vw,88px);letter-spacing:-.06em;line-height:.9;font-weight:500;margin:12px 0 65px}.section-title span{color:var(--muted)}
+.hero{width:min(var(--max),calc(100% - 64px));margin:auto;min-height:calc(100vh - 74px);display:grid;grid-template-rows:auto 1fr auto;padding:34px 0 48px}.hero-top{display:flex;justify-content:space-between;color:var(--muted);align-items:center}.language-toggle{border:1px solid #c8c4ba;background:transparent;color:inherit;padding:6px 9px;font:inherit;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.language-toggle:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}.hero-main{display:grid;grid-template-columns:1fr 280px;align-items:center;gap:60px}.hero-name{font-family:'Space Grotesk';font-size:clamp(70px,11.5vw,155px);line-height:.82;letter-spacing:-.085em;font-weight:500}.hero-name span{display:block}.hero-name .accent{color:var(--accent)}.hero-portrait{width:230px;height:290px;border-radius:2px;object-fit:cover;object-position:center top;filter:saturate(.96);justify-self:end}.hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:40px;border-top:1px solid var(--line);padding-top:18px}.hero-bottom p{max-width:620px;font-size:20px;line-height:1.2;margin:0}.hero-links{justify-self:end;display:flex;gap:22px;font-size:10px;letter-spacing:.11em;text-transform:uppercase;align-items:start}.section,.contact,.manifesto,.numbers,.footer{width:min(var(--max),calc(100% - 64px));margin:auto}.section,.manifesto,.contact{border-top:1px solid var(--line);padding:135px 0;display:grid;grid-template-columns:180px 1fr;gap:44px}.section-title{font-family:'Space Grotesk';font-size:clamp(48px,6vw,88px);letter-spacing:-.06em;line-height:.9;font-weight:500;margin:12px 0 65px}.section-title span{color:var(--muted)}
 .manifesto{border-top:0}.statement{font-family:'Space Grotesk';font-size:clamp(38px,5.3vw,72px);line-height:.97;letter-spacing:-.055em;margin:0;max-width:1000px}.statement em{font-style:normal;color:var(--accent)}.manifesto-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:65px;max-width:900px}.manifesto-grid p{color:#5a5e58;max-width:480px}.numbers{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.numbers div{padding:26px 20px;border-right:1px solid var(--line)}.numbers div:first-child{padding-left:0}.numbers div:last-child{border-right:0}.numbers strong{font-family:'Space Grotesk';font-size:52px;line-height:1;letter-spacing:-.07em;display:block}.numbers span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .stack-list,.timeline,.education-list{border-top:1px solid var(--line)}.stack-row{display:grid;grid-template-columns:55px 210px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}.stack-row h3{font-size:15px;margin:0}.stack-items{display:flex;flex-wrap:wrap;gap:7px}.tag{border:1px solid #c8c4ba;padding:5px 8px;font-family:monospace;letter-spacing:.04em;color:#4d514c}
 .timeline article{display:grid;grid-template-columns:150px 1fr 200px;gap:32px;padding:32px 0;border-bottom:1px solid var(--line)}.timeline h3{font-family:'Space Grotesk';font-size:26px;letter-spacing:-.03em;margin:0}.timeline .company{color:var(--muted);font-size:13px;margin:2px 0 14px}.timeline article p:not(.company){color:#5b5e59;max-width:650px;margin:0;font-size:14px}.role{justify-self:end;text-align:right;color:var(--muted)}

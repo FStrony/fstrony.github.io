@@ -1,7 +1,7 @@
 export const translations = {
   en: {
-    locale: 'en-GB',
-    htmlLang: 'en',
+    locale: 'en',
+    htmlLang: 'en-GB',
     site: {
       title: 'Fernando Augusto Santos | Senior Software Engineer',
       description: 'Senior Software Engineer specialising in Java, Spring Boot, AWS, microservices, backend architecture and cloud integrations.',
@@ -19,7 +19,8 @@ export const translations = {
     hero: {
       role: 'Senior Software Engineer',
       location: 'Florianópolis · Brazil',
-      language: 'EN / PT',
+      language: 'PT',
+      languageAriaLabel: 'Switch to Portuguese',
       firstName: 'Fernando',
       middleName: 'Augusto',
       lastName: 'Santos.',
@@ -153,7 +154,8 @@ export const translations = {
     hero: {
       role: 'Engenheiro de Software Sênior',
       location: 'Florianópolis · Brasil',
-      language: 'PT / EN',
+      language: 'EN',
+      languageAriaLabel: 'Switch to Portuguese',
       firstName: 'Fernando',
       middleName: 'Augusto',
       lastName: 'Santos.',

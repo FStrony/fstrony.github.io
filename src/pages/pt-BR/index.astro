@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Portfolio from '../../components/Portfolio.astro';
+import { translations } from '../../content/translations';
+
+const content = translations.pt;
+---
+
+<Layout
+  title={content.site.title}
+  description={content.site.description}
+  locale={content.htmlLang}
+  nav={content.nav}
+  footer={content.footer}
+>
+  <Portfolio content={content} />
+</Layout>
