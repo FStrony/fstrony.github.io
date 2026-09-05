@@ -1,10 +1,10 @@
 export const translations = {
   en: {
-    locale: 'en-GB',
-    htmlLang: 'en',
+    locale: 'en',
+    htmlLang: 'en-GB',
     site: {
       title: 'Fernando Augusto Santos | Senior Software Engineer',
-      description: 'Senior Software Engineer specialising in Java, Spring Boot, AWS, microservices, backend architecture and cloud integrations.',
+      description: 'Senior Software Engineer specialising in Java, Spring Boot, AWS, microservices, backend architecture, REST APIs and cloud integrations.',
     },
     nav: {
       about: 'About',
@@ -19,7 +19,8 @@ export const translations = {
     hero: {
       role: 'Senior Software Engineer',
       location: 'Florianópolis · Brazil',
-      language: 'EN / PT',
+      language: 'PT',
+      languageAriaLabel: 'Switch to Portuguese',
       firstName: 'Fernando',
       middleName: 'Augusto',
       lastName: 'Santos.',
@@ -138,7 +139,7 @@ export const translations = {
     htmlLang: 'pt-BR',
     site: {
       title: 'Fernando Augusto Santos | Engenheiro de Software Sênior',
-      description: 'Engenheiro de Software Sênior especializado em Java, Spring Boot, AWS, microsserviços, arquitetura backend e integrações cloud.',
+      description: 'Engenheiro de Software Sênior especializado em Java, Spring Boot, AWS, microsserviços, arquitetura backend, APIs REST e integrações cloud.',
     },
     nav: {
       about: 'Perfil',
@@ -153,7 +154,8 @@ export const translations = {
     hero: {
       role: 'Engenheiro de Software Sênior',
       location: 'Florianópolis · Brasil',
-      language: 'PT / EN',
+      language: 'EN',
+      languageAriaLabel: 'Trocar para inglês',
       firstName: 'Fernando',
       middleName: 'Augusto',
       lastName: 'Santos.',
