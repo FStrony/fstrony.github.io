@@ -47,12 +47,31 @@ const ogImage = new URL('/og.svg', siteUrl).href;
       '@type': 'Person',
       name: 'Fernando Augusto Santos',
       jobTitle: 'Senior Software Engineer',
-      url: 'https://fstrony.github.io',
+      url: siteUrl.href,
       email: 'mailto:fstrony@gmail.com',
       telephone: '+55 11 97262-5933',
-      address: { '@type': 'PostalAddress', addressLocality: 'Florianópolis', addressCountry: 'BR' },
-      sameAs: ['https://www.linkedin.com/in/fstrony/', 'https://github.com/FStrony'],
-      knowsAbout: ['Java','Spring Boot','AWS','Microservices','Software Architecture','Backend Engineering','REST APIs','Event-Driven Architecture','System Design','C#','.NET']
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Florianópolis',
+        addressCountry: 'BR'
+      },
+      sameAs: [
+        'https://www.linkedin.com/in/fstrony/',
+        'https://github.com/FStrony'
+      ],
+      knowsAbout: [
+        'Java',
+        'Spring Boot',
+        'AWS',
+        'Microservices',
+        'Software Architecture',
+        'Backend Engineering',
+        'REST APIs',
+        'Event-Driven Architecture',
+        'System Design',
+        'C#',
+        '.NET'
+      ]
     })} />
   </head>
   <body>
