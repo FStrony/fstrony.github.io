@@ -1,14 +1,10 @@
 ---
 const redirectScript = `
-  const savedLocale = localStorage.getItem('portfolio-locale');
   const browserLocale = navigator.language?.toLowerCase() || 'en';
 
-  const locale =
-    savedLocale === 'pt' || savedLocale === 'pt-BR' || savedLocale === 'en'
-      ? savedLocale
-      : browserLocale.startsWith('pt')
-        ? 'pt-BR'
-        : 'en';
+  const locale = browserLocale.startsWith('pt')
+    ? 'pt-BR'
+    : 'en';
 
   window.location.replace('/' + locale + '/');
 `;
