@@ -7,11 +7,14 @@ const {
   footer = { role: 'Senior Software Engineer · Florianópolis, Brazil', copyright: '© 2026' },
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://fstrony.github.io');
+const siteUrl = Astro.site!;
 const canonical = new URL(Astro.url.pathname, siteUrl).href;
 const englishUrl = new URL('/en/', siteUrl).href;
 const portugueseUrl = new URL('/pt-BR/', siteUrl).href;
 const defaultUrl = new URL('/', siteUrl).href;
+const ogLocale = locale === 'pt-BR' ? 'pt_BR' : 'en_GB';
+const alternateOgLocale = locale === 'pt-BR' ? 'en_GB' : 'pt_BR';
+const ogImage = new URL('/og.svg', siteUrl).href;
 ---
 <!doctype html>
 <html lang={locale}>
@@ -28,9 +31,16 @@ const defaultUrl = new URL('/', siteUrl).href;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="/og.svg" />
+    <meta property="og:site_name" content="Fernando Augusto Santos" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={alternateOgLocale} />
+    <meta property="og:image" content={ogImage} />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="/og.svg" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
