@@ -1,10 +1,7 @@
 ---
 const redirectScript = `
   const browserLocale = navigator.language?.toLowerCase() || 'en';
-
-  const locale = browserLocale.startsWith('pt')
-    ? 'pt-BR'
-    : 'en';
+  const locale = browserLocale.startsWith('pt') ? 'pt-BR' : 'en';
 
   window.location.replace('/' + locale + '/');
 `;
@@ -15,11 +12,18 @@ const redirectScript = `
   <head>
     <meta charset="utf-8" />
     <meta name="robots" content="noindex" />
-    <meta http-equiv="refresh" content="5;url=/en/" />
     <title>Fernando Augusto Santos</title>
     <script is:inline set:html={redirectScript}></script>
   </head>
   <body>
-    <p>Redirecting…</p>
+    <main>
+      <h1>Fernando Augusto Santos</h1>
+      <p>Select your language:</p>
+
+      <nav aria-label="Language selection">
+        <a href="/en/" lang="en">English</a>
+        <a href="/pt-BR/" lang="pt-BR">Português (Brasil)</a>
+      </nav>
+    </main>
   </body>
 </html>
