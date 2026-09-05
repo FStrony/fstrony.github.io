@@ -4,7 +4,7 @@ export const translations = {
     htmlLang: 'en-GB',
     site: {
       title: 'Fernando Augusto Santos | Senior Software Engineer',
-      description: 'Senior Software Engineer specialising in Java, Spring Boot, AWS, microservices, backend architecture and cloud integrations.',
+      description: 'Senior Software Engineer specialising in Java, Spring Boot, AWS, microservices, backend architecture, REST APIs and cloud integrations.',
     },
     nav: {
       about: 'About',
@@ -139,7 +139,7 @@ export const translations = {
     htmlLang: 'pt-BR',
     site: {
       title: 'Fernando Augusto Santos | Engenheiro de Software Sênior',
-      description: 'Engenheiro de Software Sênior especializado em Java, Spring Boot, AWS, microsserviços, arquitetura backend e integrações cloud.',
+      description: 'Engenheiro de Software Sênior especializado em Java, Spring Boot, AWS, microsserviços, arquitetura backend, APIs REST e integrações cloud.',
     },
     nav: {
       about: 'Perfil',
