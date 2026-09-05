@@ -3,49 +3,47 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const { content } = Astro.props;
 
-const currentLocale = content.htmlLang;
+const currentLocale = content.locale;
 const alternateLocale = currentLocale === 'pt-BR' ? 'en' : 'pt-BR';
 const alternateUrl = getRelativeLocaleUrl(alternateLocale);
 ---
 
 <section class="hero" id="home" data-section="home">
     <div class="hero-top">
-        <span data-i18n="hero.role">{content.hero.role}</span>
-        <span data-i18n="hero.location">{content.hero.location}</span>
+        <span>{content.hero.role}</span>
+        <span>{content.hero.location}</span>
         <a class="language-toggle" href={alternateUrl} aria-label={content.hero.languageAriaLabel}>
             {content.hero.language}
         </a>
     </div>
     <div class="hero-main">
         <div class="hero-name">
-            <span data-i18n="hero.firstName">{content.hero.firstName}</span>
-            <span data-i18n="hero.middleName">{content.hero.middleName}</span>
-            <span class="accent" data-i18n="hero.lastName">{content.hero.lastName}</span>
+            <span>{content.hero.firstName}</span>
+            <span>{content.hero.middleName}</span>
+            <span class="accent">{content.hero.lastName}</span>
         </div>
-        <img class="hero-portrait" src="/profile.png" alt={content.hero.portraitAlt}
-            data-i18n-attr="alt:hero.portraitAlt" loading="eager" />
+        <img class="hero-portrait" src="/profile.png" alt={content.hero.portraitAlt} loading="eager" />
     </div>
     <div class="hero-bottom">
-        <p data-i18n="hero.description">{content.hero.description}</p>
+        <p>{content.hero.description}</p>
         <div class="hero-links">
             <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
             <a href="https://github.com/FStrony" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-i18n="resume.label"
-                data-i18n-attr="href:resume.url">{content.resume.label}</a>
-            <a href="#work" data-i18n="hero.selectedWork">{content.hero.selectedWork}</a>
+            <a href={content.resume.url} target="_blank" rel="noopener noreferrer">{content.resume.label}</a>
+            <a href="#work">{content.hero.selectedWork}</a>
         </div>
     </div>
 </section>
 
 <section class="manifesto" id="about">
-    <div class="side-label"><span>01 / </span><span data-i18n="sections.profile">{content.sections.profile}</span></div>
+    <div class="side-label"><span>01 / </span><span>{content.sections.profile}</span></div>
     <div>
-        <p class="statement"><span data-i18n="profile.statementBefore">{content.profile.statementBefore}</span><em
-                data-i18n="profile.statementEmphasis">{content.profile.statementEmphasis}</em><span
-                data-i18n="profile.statementAfter">{content.profile.statementAfter}</span></p>
+        <p class="statement">
+            <span>{content.profile.statementBefore}</span><em>{content.profile.statementEmphasis}</em><span>{content.profile.statementAfter}</span>
+        </p>
         <div class="manifesto-grid">
-            <p data-i18n="profile.body1">{content.profile.body1}</p>
-            <p data-i18n="profile.body2">{content.profile.body2}</p>
+            <p>{content.profile.body1}</p>
+            <p>{content.profile.body2}</p>
         </div>
     </div>
 </section>
@@ -56,13 +54,11 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale);
 </section>
 
 <section class="section" id="engineering">
-    <div class="side-label"><span>02 / </span><span
-            data-i18n="sections.engineering">{content.sections.engineering}</span></div>
+    <div class="side-label"><span>02 / </span><span>{content.sections.engineering}</span></div>
     <div>
-        <p class="kicker" data-i18n="engineering.kicker">{content.engineering.kicker}</p>
-        <h2 class="section-title"><span
-                data-i18n="engineering.titleBefore">{content.engineering.titleBefore}</span><br /><span
-                data-i18n="engineering.titleAfter">{content.engineering.titleAfter}</span></h2>
+        <p class="kicker">{content.engineering.kicker}</p>
+        <h2 class="section-title">
+            <span>{content.engineering.titleBefore}</span><br /><span>{content.engineering.titleAfter}</span></h2>
         <div class="stack-list">
             {content.engineering.stack.map(([title, items], i) => <div class="stack-row"><span class="meta">0{i +
                     1}</span>
@@ -75,13 +71,12 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale);
 </section>
 
 <section class="section" id="experience">
-    <div class="side-label"><span>03 / </span><span data-i18n="sections.experience">{content.sections.experience}</span>
+    <div class="side-label"><span>03 / </span><span>{content.sections.experience}</span>
     </div>
     <div>
-        <p class="kicker" data-i18n="experience.kicker">{content.experience.kicker}</p>
-        <h2 class="section-title"><span
-                data-i18n="experience.titleBefore">{content.experience.titleBefore}</span><br /><span
-                data-i18n="experience.titleAfter">{content.experience.titleAfter}</span></h2>
+        <p class="kicker">{content.experience.kicker}</p>
+        <h2 class="section-title">
+            <span>{content.experience.titleBefore}</span><br /><span>{content.experience.titleAfter}</span></h2>
         <div class="timeline">
             {content.experience.items.map((item, i) => <article>
                 <time class="meta" datetime={item.start} data-i18n={`experience.items.${i}.period`}>{item.period}</time>
@@ -97,11 +92,11 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale);
 </section>
 
 <section class="section" id="work">
-    <div class="side-label"><span>04 / </span><span data-i18n="sections.work">{content.sections.work}</span></div>
+    <div class="side-label"><span>04 / </span><span>{content.sections.work}</span></div>
     <div>
-        <p class="kicker" data-i18n="work.kicker">{content.work.kicker}</p>
-        <h2 class="section-title"><span data-i18n="work.titleBefore">{content.work.titleBefore}</span><br /><span
-                data-i18n="work.titleAfter">{content.work.titleAfter}</span></h2>
+        <p class="kicker">{content.work.kicker}</p>
+        <h2 class="section-title"><span>{content.work.titleBefore}</span><br /><span>{content.work.titleAfter}</span>
+        </h2>
         {content.work.projects.map((project, i) => <article class="case">
             <div class="case-top"><span class="case-no">{project.no}</span><span class="eyebrow"
                     data-i18n={`work.projects.${i}.label`}>{project.label}</span></div>
@@ -113,44 +108,41 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale);
                             data-i18n={`work.projects.${i}.tags.${j}`}>{tag}</span>)}</div>
                 </div>
                 <div class="case-details">
-                    <div><small data-i18n="work.labels.problem">{content.work.labels.problem}</small>
+                    <div><small>{content.work.labels.problem}</small>
                         <p data-i18n={`work.projects.${i}.problem`}>{project.problem}</p>
                     </div>
-                    <div><small data-i18n="work.labels.approach">{content.work.labels.approach}</small>
+                    <div><small>{content.work.labels.approach}</small>
                         <p data-i18n={`work.projects.${i}.approach`}>{project.approach}</p>
                     </div>
-                    <div><small data-i18n="work.labels.role">{content.work.labels.role}</small>
+                    <div><small>{content.work.labels.role}</small>
                         <p data-i18n={`work.projects.${i}.role`}>{project.role}</p>
                     </div>
                 </div>
             </div>
         </article>)}
-        <p class="confidential" data-i18n="work.confidential">{content.work.confidential}</p>
+        <p class="confidential">{content.work.confidential}</p>
     </div>
 </section>
 
 <section class="section international">
-    <div class="side-label"><span>05 / </span><span
-            data-i18n="sections.international">{content.sections.international}</span></div>
+    <div class="side-label"><span>05 / </span><span>{content.sections.international}</span></div>
     <div>
-        <div class="country"><span data-i18n="international.country">{content.international.country}</span><span
-                data-i18n-html="international.countryAfter" set:html={content.international.countryAfter}></span></div>
-        <p class="large-copy" data-i18n="international.copy">{content.international.copy}</p>
-        <div class="language-line"><span
-                data-i18n="international.language">{content.international.language}</span><strong
-                data-i18n="international.band">{content.international.band}</strong><span
-                data-i18n="international.switch">{content.international.switch}</span></div>
+        <div class="country"><span>{content.international.country}</span><span
+                set:html={content.international.countryAfter}></span></div>
+        <p class="large-copy">{content.international.copy}</p>
+        <div class="language-line">
+            <span>{content.international.language}</span><strong>{content.international.band}</strong><span>{content.international.switch}</span>
+        </div>
     </div>
 </section>
 
 <section class="section">
-    <div class="side-label"><span>06 / </span><span data-i18n="sections.education">{content.sections.education}</span>
+    <div class="side-label"><span>06 / </span><span>{content.sections.education}</span>
     </div>
     <div>
-        <p class="kicker" data-i18n="education.kicker">{content.education.kicker}</p>
-        <h2 class="section-title"><span
-                data-i18n="education.titleBefore">{content.education.titleBefore}</span><br /><span
-                data-i18n="education.titleAfter">{content.education.titleAfter}</span></h2>
+        <p class="kicker">{content.education.kicker}</p>
+        <h2 class="section-title">
+            <span>{content.education.titleBefore}</span><br /><span>{content.education.titleAfter}</span></h2>
         <div class="education-list">
             {content.education.items.map((item, i) => <article><span class="meta"
                     data-i18n={`education.items.${i}.period`}>{item.period}</span>
@@ -162,31 +154,27 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale);
 </section>
 
 <section class="section beyond">
-    <div class="side-label"><span>07 / </span><span data-i18n="sections.beyond">{content.sections.beyond}</span></div>
+    <div class="side-label"><span>07 / </span><span>{content.sections.beyond}</span></div>
     <div>
-        <p class="kicker" data-i18n="beyond.kicker">{content.beyond.kicker}</p>
-        <h2><span data-i18n="beyond.titleBefore">{content.beyond.titleBefore}</span><br /><span
-                data-i18n="beyond.titleAfter">{content.beyond.titleAfter}</span></h2>
-        <p data-i18n="beyond.body">{content.beyond.body}</p>
+        <p class="kicker">{content.beyond.kicker}</p>
+        <h2><span>{content.beyond.titleBefore}</span><br /><span>{content.beyond.titleAfter}</span></h2>
+        <p>{content.beyond.body}</p>
     </div>
 </section>
 
 <section class="contact" id="contact">
-    <div class="side-label"><span>08 / </span><span data-i18n="sections.contact">{content.sections.contact}</span></div>
+    <div class="side-label"><span>08 / </span><span>{content.sections.contact}</span></div>
     <div>
-        <p class="kicker" data-i18n="contact.kicker">{content.contact.kicker}</p>
-        <h2><span data-i18n="contact.titleBefore">{content.contact.titleBefore}</span><br /><span
-                data-i18n="contact.titleAfter">{content.contact.titleAfter}</span></h2>
-        <p data-i18n="contact.body">{content.contact.body}</p>
+        <p class="kicker">{content.contact.kicker}</p>
+        <h2><span>{content.contact.titleBefore}</span><br /><span>{content.contact.titleAfter}</span></h2>
+        <p>{content.contact.body}</p>
         <div class="contact-links">
-            <a href="mailto:fstrony@gmail.com" data-i18n="contact.links.email">{content.contact.links.email}</a>
-            <a href="tel:+5511972625933" data-i18n="contact.links.phone">{content.contact.links.phone}</a>
-            <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer"
-                data-i18n="contact.links.linkedin">{content.contact.links.linkedin}</a>
-            <a href="https://github.com/FStrony" target="_blank" rel="noreferrer"
-                data-i18n="contact.links.github">{content.contact.links.github}</a>
-            <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-i18n="resume.label"
-                data-i18n-attr="href:resume.url">{content.resume.label}</a>
+            <a href="mailto:fstrony@gmail.com">{content.contact.links.email}</a>
+            <a href="tel:+5511972625933">{content.contact.links.phone}</a>
+            <a href="https://www.linkedin.com/in/fstrony/" target="_blank"
+                rel="noreferrer">{content.contact.links.linkedin}</a>
+            <a href="https://github.com/FStrony" target="_blank" rel="noreferrer">{content.contact.links.github}</a>
+            <a href={content.resume.url} target="_blank" rel="noopener noreferrer">{content.resume.label}</a>
         </div>
     </div>
 </section>

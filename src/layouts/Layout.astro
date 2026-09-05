@@ -42,23 +42,23 @@ const canonical = Astro.url.href;
     <header class="site-header">
       <a class="brand" href="#home"><span>FA</span> / FERNANDO AUGUSTO</a>
       <nav class="desktop-nav" aria-label={locale === 'pt-BR' ? 'Navegação principal' : 'Main navigation'}>
-        <a href="#about" data-i18n="nav.about">{nav.about}</a>
-        <a href="#engineering" data-i18n="nav.engineering">{nav.engineering}</a>
-        <a href="#experience" data-i18n="nav.experience">{nav.experience}</a>
-        <a href="#work" data-i18n="nav.work">{nav.work}</a>
-        <a href="#contact" data-i18n="nav.contact">{nav.contact}</a>
+        <a href="#about">{nav.about}</a>
+        <a href="#engineering">{nav.engineering}</a>
+        <a href="#experience">{nav.experience}</a>
+        <a href="#work">{nav.work}</a>
+        <a href="#contact">{nav.contact}</a>
       </nav>
-      <a class="top-cta" href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-i18n="nav.linkedin">{nav.linkedin}</a>
-      <button class="menu-toggle" type="button" aria-label={nav.openMenu} aria-expanded="false" data-i18n="nav.menu">{nav.menu}</button>
+      <a class="top-cta" href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">{nav.linkedin}</a>
+      <button class="menu-toggle" type="button" aria-label={nav.openMenu} aria-expanded="false">{nav.menu}</button>
     </header>
     <div class="mobile-panel" aria-hidden="true">
-      <a href="#about" data-i18n="nav.about">{nav.about}</a><a href="#engineering" data-i18n="nav.engineering">{nav.engineering}</a><a href="#experience" data-i18n="nav.experience">{nav.experience}</a><a href="#work" data-i18n="nav.work">{nav.work}</a><a href="#contact" data-i18n="nav.contact">{nav.contact}</a>
+      <a href="#about">{nav.about}</a><a href="#engineering">{nav.engineering}</a><a href="#experience">{nav.experience}</a><a href="#work">{nav.work}</a><a href="#contact">{nav.contact}</a>
     </div>
     <main><slot /></main>
     <footer class="footer">
       <span>Fernando Augusto Santos</span>
-      <span data-i18n="footer.role">{footer.role}</span>
-      <span data-i18n="footer.copyright">{footer.copyright}</span>
+      <span>{footer.role}</span>
+      <span>{footer.copyright}</span>
     </footer>
 
     <script>
