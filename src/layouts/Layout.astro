@@ -7,7 +7,11 @@ const {
   footer = { role: 'Senior Software Engineer · Florianópolis, Brazil', copyright: '© 2026' },
 } = Astro.props;
 
-const canonical = Astro.url.href;
+const siteUrl = Astro.site ?? new URL('https://fstrony.github.io');
+const canonical = new URL(Astro.url.pathname, siteUrl).href;
+const englishUrl = new URL('/en/', siteUrl).href;
+const portugueseUrl = new URL('/pt-BR/', siteUrl).href;
+const defaultUrl = new URL('/', siteUrl).href;
 ---
 <!doctype html>
 <html lang={locale}>
@@ -16,6 +20,10 @@ const canonical = Astro.url.href;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en-GB" href={englishUrl} />
+    <link rel="alternate" hreflang="pt-BR" href={portugueseUrl} />
+    <link rel="alternate" hreflang="x-default" href={defaultUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
