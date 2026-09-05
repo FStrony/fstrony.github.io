@@ -35,8 +35,10 @@ The website is intentionally designed as a small but production-oriented project
 
 ## ✨ Highlights
 
-- 🌍 Bilingual experience: **English (British English) / Português (Brasil)**
-- 🧱 Content separated from presentation
+- 🌍 Localised experience: **English (British English) / Português (Brasil)**
+- 🧱 Shared presentation layer with locale-specific content
+- 🔗 Localised routes with browser-based language selection
+- 🔎 SEO metadata, structured data and search-engine discovery
 - ♿ Automated accessibility testing
 - 🔗 Automated link validation
 - ✅ HTML validation
@@ -44,7 +46,6 @@ The website is intentionally designed as a small but production-oriented project
 - 🚀 Automated deployment to GitHub Pages
 - 🔄 Automatic `main → develop` synchronisation
 - 🏷️ Manual Semantic Versioning release automation with automated tagging
-- 📦 Reusable architecture suitable for forks
 - 🔒 Protected production branch with mandatory quality gates
 
 ---
@@ -71,12 +72,18 @@ The application intentionally keeps **content** separate from **presentation**.
 
 ```text
 src/
+├── components/
+│   └── Portfolio.astro
 ├── content/
 │   └── translations.ts
 ├── layouts/
 │   └── Layout.astro
 └── pages/
-    └── index.astro
+    ├── index.astro
+    ├── en/
+    │   └── index.astro
+    └── pt-BR/
+        └── index.astro
 ```
 
 ### Content
@@ -92,7 +99,7 @@ Português → pt-BR
 
 ### Presentation
 
-The Astro page is responsible for structure and presentation, while the content layer provides locale-specific data.
+The shared Astro component is responsible for structure and presentation, while the content layer provides locale-specific data.
 
 This keeps the template easier to maintain and allows content changes without repeatedly modifying the page structure.
 
@@ -107,7 +114,20 @@ The website supports:
 
 The English version intentionally follows British English conventions, reflecting my professional and academic experience in Australia.
 
-The language switcher changes the content without maintaining separate copies of the entire page.
+### Routes
+
+```text
+/        → language selector
+/en/     → English
+/pt-BR/  → Português (Brasil)
+```
+
+The root route detects the browser language and directs visitors to the corresponding localised version:
+
+- browsers using Portuguese → `/pt-BR/`
+- other browsers → `/en/`
+
+The language switcher allows visitors to move directly between the two localised versions.
 
 The localisation approach is based on a shared presentation layer with locale-specific content, keeping the codebase compact and avoiding duplicated page structures.
 
@@ -116,10 +136,28 @@ The localisation approach is based on a shared presentation layer with locale-sp
 The portfolio provides localised Resume/CV documents that follow the selected site language:
 
 - 🇬🇧 English: [`/resume/Fernando_Augusto_Santos_Resume_EN.pdf`](/resume/Fernando_Augusto_Santos_Resume_EN.pdf)
-
 - 🇧🇷 Português (Brasil): [`/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf`](/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf)
 
-The Resume/CV link updates with the language switcher and opens the corresponding PDF in a new tab.
+The Resume/CV link updates with the selected language and opens the corresponding PDF in a new tab.
+
+---
+
+## 🔎 SEO
+
+SEO is implemented as part of the site architecture rather than as a separate post-release task.
+
+The localised pages include:
+
+- canonical URLs for each language version;
+- `hreflang` metadata for English and Brazilian Portuguese;
+- `x-default` pointing to the language-selection route;
+- Open Graph metadata for social sharing;
+- Twitter Card metadata;
+- `Person` structured data using JSON-LD;
+- automatically generated sitemap files;
+- `robots.txt` configured for search-engine crawling.
+
+The root `/` language-selection route is excluded from the sitemap because it is not a content page.
 
 ---
 
@@ -259,125 +297,68 @@ Production changes are merged from `develop` using a **merge commit**, preservin
 
 After a production update, GitHub Actions automatically synchronises `develop` with `main`.
 
-```text
-main
-  │
-  ▼
-sync workflow
-  │
-  ▼
-fast-forward develop
-```
-
-The synchronisation intentionally uses a **fast-forward-only** strategy.
-
-No force push or automatic conflict resolution is performed.
-
-If the histories diverge unexpectedly, the workflow fails instead of rewriting history or making an unsafe automatic merge.
-
-This keeps `develop` aligned with the exact state that has reached production.
+This keeps the integration branch aligned with the production state without requiring a manual synchronisation step after every release.
 
 ---
 
-## 📦 Release Automation
+## 🏷️ Releases
 
-Releases are created manually through GitHub Actions.
-
-The release workflow accepts a Semantic Version:
-
-```text
-2.1.0
-```
-
-and creates:
-
-```text
-v2.1.0
-```
-
-along with a GitHub Release and generated release notes.
-
-### Release flow
-
-```text
-main
-  │
-  ▼
-GitHub Actions → Release
-  │
-  ▼
-Semantic version validation
-  │
-  ▼
-Duplicate tag check
-  │
-  ▼
-Git identity configuration
-  │
-  ▼
-Annotated tag vX.Y.Z
-  │
-  ▼
-GitHub Release
-  │
-  ▼
-Generated release notes
-```
-
-The workflow configures a dedicated GitHub Actions bot identity before creating the annotated release tag, ensuring that releases can be created consistently in the CI environment.
-
-A dry-run mode is available to validate the release process without creating a tag or GitHub Release.
-
-### Versioning
-
-The project follows [Semantic Versioning](https://semver.org/):
+Releases use **Semantic Versioning**:
 
 ```text
 MAJOR.MINOR.PATCH
 ```
 
-Examples:
+Release creation is intentionally manual.
 
-```text
-v2.0.0
-v2.1.0
-v2.1.1
-```
+The release workflow:
 
-Version selection remains an explicit release decision rather than being inferred automatically from every commit.
+1. validates the requested version;
+2. checks that the version is newer than the current release;
+3. creates the Git tag;
+4. creates the GitHub release;
+5. preserves the release history in the repository.
 
-This keeps the release history intentional and avoids creating versions for infrastructure-only changes.
+Production deployment remains tied to the protected `main` branch.
 
 ---
 
-## 💻 Local Development
+## 📄 Resume / CV
 
-### Requirements
+The repository includes both localised versions of the professional Resume/CV:
 
-- Node.js
-- npm
+```text
+public/
+└── resume/
+    ├── Fernando_Augusto_Santos_Resume_EN.pdf
+    └── Fernando_Augusto_Santos_CV_PT-BR.pdf
+```
 
-### Install dependencies
+These documents are versioned together with the portfolio so that the public professional profile and downloadable documents remain aligned.
+
+---
+
+## 🧪 Development
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Start the development server
+Start the local development server:
 
 ```bash
 npm run dev
 ```
 
-The site will be available through the Astro development server.
-
-### Production build
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-The generated website is written to:
+The generated production artefact is written to:
 
 ```text
 dist/
@@ -385,98 +366,37 @@ dist/
 
 ---
 
-## 🧪 Validation
-
-Before opening a pull request, the main local checks are:
-
-```bash
-npm run build
-git diff --check
-```
-
-The complete CI workflow performs:
+## 📁 Project Structure
 
 ```text
-Build
-HTML validation
-Link validation
-Accessibility
+.
+├── public/
+│   ├── favicon.svg
+│   ├── og.svg
+│   ├── profile.png
+│   ├── robots.txt
+│   └── resume/
+├── src/
+│   ├── components/
+│   │   └── Portfolio.astro
+│   ├── content/
+│   │   └── translations.ts
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       ├── index.astro
+│       ├── en/
+│       │   └── index.astro
+│       └── pt-BR/
+│           └── index.astro
+├── .github/
+│   └── workflows/
+├── astro.config.mjs
+├── package.json
+├── package-lock.json
+├── LICENSE.txt
+└── README.md
 ```
-
-The CI pipeline is the final validation layer before production.
-
----
-
-## 🍴 Fork & Reuse
-
-This project is intentionally structured so that its technical foundation can be reused as a starting point for another personal portfolio.
-
-If you fork this repository, **replace the personal material before publishing it**.
-
-### Recommended fork checklist
-
-```text
-[ ] Replace personal name and biography
-[ ] Replace professional profile content
-[ ] Replace profile image
-[ ] Replace email and phone number
-[ ] Replace LinkedIn and GitHub links
-[ ] Replace Open Graph / social preview assets
-[ ] Replace Resume/CV documents
-[ ] Replace favicon and branding
-[ ] Review English content
-[ ] Review Portuguese content
-[ ] Review structured metadata
-[ ] Review SEO metadata
-[ ] Review experience and education
-[ ] Review project case studies
-[ ] Review GitHub Actions workflows
-[ ] Configure GitHub Pages
-[ ] Review release configuration
-[ ] Review licence and copyright notices
-```
-
-### Content customisation
-
-Most personal content is kept in:
-
-```text
-src/content/translations.ts
-```
-
-This is the first place to look when adapting the portfolio for another person.
-
-### Assets
-
-Personal, branding and Resume/CV assets are stored under:
-
-```text
-public/
-```
-
-Typical files include:
-
-```text
-profile.png
-favicon.svg
-og.svg
-resume/
-├── Fernando_Augusto_Santos_Resume_EN.pdf
-└── Fernando_Augusto_Santos_CV_PT-BR.pdf
-```
-
-### GitHub Pages
-
-After forking:
-
-1. enable GitHub Pages for the repository;
-2. review the deployment workflow;
-3. verify the repository-specific Pages configuration;
-4. update canonical URLs and metadata;
-5. replace personal branding and assets;
-6. confirm the generated site works under the new repository.
-
-Because deployment and repository URLs are repository-specific, the GitHub Actions configuration should always be reviewed after a fork.
 
 ---
 
@@ -558,42 +478,6 @@ Branch governance
 ```
 
 rather than adding tools that increase maintenance without improving the project meaningfully.
-
----
-
-## 🗂️ Repository Structure
-
-```text
-.
-├── .github/
-│   └── workflows/
-│       ├── ci.yml
-│       ├── deploy.yml
-│       ├── release.yml
-│       └── sync-develop.yml
-│
-├── public/
-│   ├── resume/
-│   │   ├── Fernando_Augusto_Santos_Resume_EN.pdf
-│   │   └── Fernando_Augusto_Santos_CV_PT-BR.pdf
-│   ├── favicon.svg
-│   ├── og.svg
-│   └── profile.png
-│
-├── src/
-│   ├── content/
-│   │   └── translations.ts
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-│
-├── LICENSE.txt
-├── README.md
-├── astro.config.mjs
-├── package.json
-└── package-lock.json
-```
 
 ---
 

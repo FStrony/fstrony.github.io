@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fstrony.github.io/sitemap-index.xml

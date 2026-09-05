@@ -83,6 +83,7 @@ jobs:
             --no-progress
             --root-dir ./dist
             --exclude '^https://www\.linkedin\.com/in/fstrony/'
+            --exclude '^https://fstrony\.github\.io/'
             './dist/**/*.html'
           fail: true
 
