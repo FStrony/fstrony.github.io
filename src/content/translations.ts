@@ -155,7 +155,7 @@ export const translations = {
       role: 'Engenheiro de Software Sênior',
       location: 'Florianópolis · Brasil',
       language: 'EN',
-      languageAriaLabel: 'Switch to Portuguese',
+      languageAriaLabel: 'Trocar para inglês',
       firstName: 'Fernando',
       middleName: 'Augusto',
       lastName: 'Santos.',
