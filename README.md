@@ -46,7 +46,6 @@ The website is intentionally designed as a small but production-oriented project
 - 🚀 Automated deployment to GitHub Pages
 - 🔄 Automatic `main → develop` synchronisation
 - 🏷️ Manual Semantic Versioning release automation with automated tagging
-- 📦 Reusable architecture suitable for forks
 - 🔒 Protected production branch with mandatory quality gates
 
 ---
@@ -394,30 +393,127 @@ dist/
 │   └── workflows/
 ├── astro.config.mjs
 ├── package.json
+├── package-lock.json
+├── LICENSE.txt
 └── README.md
 ```
 
 ---
 
-## 🤝 Philosophy
+## 🧠 Engineering Decisions
 
-The portfolio is intentionally small, but the engineering practices behind it are production-oriented.
+### Why Astro?
 
-The project demonstrates how a relatively simple public website can still apply:
+The portfolio is predominantly content-driven and benefits from a lightweight static architecture.
 
-- clear separation of concerns;
-- localisation without duplicated presentation;
-- semantic HTML;
-- accessibility testing;
-- automated quality gates;
-- SEO fundamentals;
-- reproducible builds;
-- protected production workflows;
-- automated deployment;
-- controlled release management.
+Astro provides a clear separation between content, components and generated output while keeping the site simple to build and deploy.
 
-The goal is not to demonstrate complexity for its own sake.
+### Why separate content from presentation?
 
-It is to demonstrate **engineering discipline at the appropriate scale**.
+A multilingual portfolio should not require maintaining two copies of the page structure.
+
+The goal is:
+
+```text
+same structure
++
+different content
+```
+
+rather than:
+
+```text
+duplicated pages
+```
+
+This reduces maintenance and makes future localisation easier.
+
+### Why British English?
+
+The English version uses British English conventions to reflect my academic and professional experience in Australia.
+
+This also keeps the public-facing portfolio linguistically consistent with how I use English professionally.
+
+### Why GitHub Actions?
+
+The repository is hosted on GitHub, so GitHub Actions provides a natural place to automate:
+
+- validation;
+- quality gates;
+- deployment;
+- branch synchronisation;
+- releases.
+
+### Why required checks on `main`?
+
+Production changes should only be merged after the generated site has passed the project's automated quality gates.
+
+This turns CI from an informational tool into an actual production safeguard.
+
+### Why automatic branch synchronisation?
+
+After a production update, `develop` should represent the same application state as `main`.
+
+Automation removes repetitive manual maintenance while preserving a safe fast-forward-only policy.
+
+### Why manual release versioning?
+
+Choosing whether a change represents a patch, minor or major release is an engineering decision.
+
+The release workflow automates the mechanical work without hiding that decision.
+
+### Why avoid excessive tooling?
+
+This repository deliberately avoids adding enterprise tooling solely for appearance.
+
+The objective is to use automation where it provides practical value:
+
+```text
+Build
+Quality
+Accessibility
+Deployment
+Releases
+Branch governance
+```
+
+rather than adding tools that increase maintenance without improving the project meaningfully.
+
+---
+
+## 🔐 Licence
+
+The **source code** of this project is licensed under the [MIT License](./LICENSE.txt).
+
+Personal content and branding are intentionally excluded from that licence.
+
+Unless otherwise stated, this includes:
+
+- personal name, biography and professional profile content;
+- photographs and personal images;
+- logos, monograms, visual identity and branding;
+- portfolio copy and original written content;
+- professional case study content and descriptions;
+- other personal or proprietary materials.
+
+The MIT licence therefore applies to the source code and associated software, **not automatically to the personal materials contained within the repository**.
+
+See [`LICENSE.txt`](./LICENSE.txt) for the complete terms.
+
+---
+
+## 👤 Author
+
+### Fernando Augusto Santos
+
+**Senior Software Engineer · Technical Consultant**
+
+Java · Spring Boot · AWS · Microservices · Backend Architecture
+
+🌐 [fstrony.github.io](https://fstrony.github.io/)  
+💼 [LinkedIn](https://www.linkedin.com/in/fstrony/)  
+🐙 [GitHub](https://github.com/FStrony)
+
+---
 
 > **Deep where it counts.**
