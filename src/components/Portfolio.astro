@@ -5,7 +5,9 @@ const { content } = Astro.props;
 
 const currentLocale = content.locale;
 const alternateLocale = currentLocale === 'pt-BR' ? 'en' : 'pt-BR';
-const alternateUrl = getRelativeLocaleUrl(alternateLocale);
+const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
+  normalizeLocale: false,
+});
 ---
 
 <section class="hero" id="home" data-section="home">
