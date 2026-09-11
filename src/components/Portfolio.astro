@@ -38,7 +38,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="manifesto" id="about">
-    <div class="side-label"><span>01 / </span><span>{content.sections.profile}</span></div>
+    <h2 class="side-label"><span>01 / </span><span>{content.sections.profile}</span></h2>
     <div>
         <p class="statement">
             <span>{content.profile.statementBefore}</span><em>{content.profile.statementEmphasis}</em><span>{content.profile.statementAfter}</span>
@@ -50,13 +50,13 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
     </div>
 </section>
 
-<section class="numbers">
+<section class="numbers" aria-label={content.sections.profile}>
     {content.numbers.map((item, i) => <div><strong>{item.value}</strong><span
             data-i18n={`numbers.${i}.label`}>{item.label}</span></div>)}
 </section>
 
 <section class="section" id="engineering">
-    <div class="side-label"><span>02 / </span><span>{content.sections.engineering}</span></div>
+    <h2 class="side-label"><span>02 / </span><span>{content.sections.engineering}</span></h2>
     <div>
         <p class="kicker">{content.engineering.kicker}</p>
         <h2 class="section-title">
@@ -73,8 +73,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="section" id="experience">
-    <div class="side-label"><span>03 / </span><span>{content.sections.experience}</span>
-    </div>
+    <h2 class="side-label"><span>03 / </span><span>{content.sections.experience}</span></h2>
     <div>
         <p class="kicker">{content.experience.kicker}</p>
         <h2 class="section-title">
@@ -94,7 +93,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="section" id="work">
-    <div class="side-label"><span>04 / </span><span>{content.sections.work}</span></div>
+    <h2 class="side-label"><span>04 / </span><span>{content.sections.work}</span></h2>
     <div>
         <p class="kicker">{content.work.kicker}</p>
         <h2 class="section-title"><span>{content.work.titleBefore}</span><br /><span>{content.work.titleAfter}</span>
@@ -127,7 +126,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="section international">
-    <div class="side-label"><span>05 / </span><span>{content.sections.international}</span></div>
+    <h2 class="side-label"><span>05 / </span><span>{content.sections.international}</span></h2>
     <div>
         <div class="country"><span>{content.international.country}</span><span
                 set:html={content.international.countryAfter}></span></div>
@@ -139,8 +138,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="section">
-    <div class="side-label"><span>06 / </span><span>{content.sections.education}</span>
-    </div>
+    <h2 class="side-label"><span>06 / </span><span>{content.sections.education}</span></h2>
     <div>
         <p class="kicker">{content.education.kicker}</p>
         <h2 class="section-title">
@@ -156,7 +154,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="section beyond">
-    <div class="side-label"><span>07 / </span><span>{content.sections.beyond}</span></div>
+    <h2 class="side-label"><span>07 / </span><span>{content.sections.beyond}</span></h2>
     <div>
         <p class="kicker">{content.beyond.kicker}</p>
         <h2><span>{content.beyond.titleBefore}</span><br /><span>{content.beyond.titleAfter}</span></h2>
@@ -165,7 +163,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="contact" id="contact">
-    <div class="side-label"><span>08 / </span><span>{content.sections.contact}</span></div>
+    <h2 class="side-label"><span>08 / </span><span>{content.sections.contact}</span></h2>
     <div>
         <p class="kicker">{content.contact.kicker}</p>
         <h2><span>{content.contact.titleBefore}</span><br /><span>{content.contact.titleAfter}</span></h2>
