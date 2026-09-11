@@ -53,7 +53,7 @@ export const translations = {
       { value: '10+', label: 'years in software' },
       { value: '6', label: 'years at Sequenza' },
       { value: '4', label: 'years in Australia' },
-      { value: '8', label: 'IELTS overall band' },
+      { value: '8', label: 'IELTS overall band score' },
     ],
     engineering: {
       kicker: 'Technical profile',
@@ -126,7 +126,7 @@ export const translations = {
       kicker: 'Open to the right challenge',
       titleBefore: "Let's build",
       titleAfter: 'something useful.',
-      body: "I'm open to Senior Software Engineering and Technical Consulting opportunities in Brazil and with international, distributed or remote teams, particularly in environments that value autonomy, adaptability and technical depth.",
+      body: "I'm open to Senior Software Engineering and Technical Consulting opportunities in Brazil or with international, distributed or remote teams, particularly in environments that value autonomy, adaptability and technical depth.",
       links: { email: 'Email ↗', phone: 'Phone ↗', linkedin: 'LinkedIn ↗', github: 'GitHub ↗' },
     },
     footer: {
@@ -211,7 +211,7 @@ export const translations = {
         { start: '2020-09', end: '', period: 'Set 2020 – Atual', role: 'Engenheiro de Software Sênior', company: 'Sequenza IT Solutions · Consultor Técnico para a Globalstar', description: 'Atuação no desenvolvimento, manutenção e modernização de sistemas críticos e plataformas voltadas a clientes em um ambiente global de comunicação via satélite.', tags: 'JAVA · SPRING BOOT · AWS' },
         { start: '2020-07', end: '2020-08', period: 'Jul 2020 – Ago 2020', role: 'Analista Programador Pleno', company: 'OLOS Tecnologia', description: 'Desenvolvimento de APIs backend, integrações entre sistemas e serviços automatizados de processamento de arquivos via FTP utilizando C#, .NET Framework e SQL Server.', tags: 'C# · .NET · SQL SERVER' },
         { start: '2019-01', end: '2020-06', period: 'Jan 2019 – Jun 2020', role: 'Desenvolvedor de Software', company: 'Helix Code · Independente', description: 'Desenvolvimento de sistemas full-stack personalizados, incluindo uma plataforma de gestão de ativos imobiliários com ASP.NET Core, React e MongoDB.', tags: 'FULL-STACK · REACT · .NET' },
-        { start: '2014-11', end: '2018-09', period: 'Nov 2014 – Set 2018', role: 'Desenvolvimento Profissional e Acadêmico', company: 'Sydney, Austrália', description: 'Período de quatro anos na Austrália dedicado ao desenvolvimento profissional e acadêmico, imersão cultural e desenvolvimento da língua inglesa.', tags: 'AUSTRÁLIA · INGLÊS' },
+        { start: '2014-11', end: '2018-09', period: 'Nov 2014 – Set 2018', role: 'Desenvolvimento Profissional e Acadêmico', company: 'Sydney, Austrália', description: 'Período de quatro anos na Austrália dedicado ao desenvolvimento profissional e acadêmico, à imersão cultural e ao aprimoramento da língua inglesa.', tags: 'AUSTRÁLIA · INGLÊS' },
         { start: '2013-06', end: '2014-10', period: 'Jun 2013 – Out 2014', role: 'Desenvolvedor de Software Júnior', company: 'Locaweb', description: 'Desenvolvimento e manutenção de produtos nas áreas de Email, PaaS e Aplicações Corporativas utilizando Ruby on Rails, PHP, C#, MySQL e Redis.', tags: 'RUBY · PHP · C#' },
         { start: '2013-01', end: '2013-05', period: 'Jan 2013 – Mai 2013', role: 'Estagiário de Desenvolvimento de Software', company: 'BRQ', description: 'Atuação em projeto para o Itaú, apoiando desenvolvimento .NET, consultas Oracle e PL/SQL, documentação técnica e scripts de teste.', tags: '.NET · ORACLE · PL/SQL' },
         { start: '2012-05', end: '2012-08', period: 'Mai 2012 – Ago 2012', role: 'Estagiário de Desenvolvimento de Software', company: 'System Marketing Consulting Ltda.', description: 'Suporte a operações de banco de dados e preparação de dados para campanhas de contact center, incluindo consultas em SQL Server e rotinas de carregamento de dados.', tags: 'SQL · MICROSOFT SQL SERVER' },
@@ -255,13 +255,13 @@ export const translations = {
       kicker: 'Um tipo diferente de trabalho de campo',
       titleBefore: 'Mergulhador voluntário.',
       titleAfter: 'Conservação marinha.',
-      body: 'Durante meus anos na Austrália, atuei como voluntário na PADI AWARE Foundation, apoiando iniciativas de conservação marinha, coleta de resíduos subaquáticos e ações de conscientização ambiental.',
+      body: 'Durante meus anos na Austrália, atuei como voluntário junto à PADI AWARE Foundation, apoiando iniciativas de conservação marinha, coleta de resíduos subaquáticos e ações de conscientização ambiental.',
     },
     contact: {
       kicker: 'Aberto ao próximo desafio',
       titleBefore: 'Vamos construir',
       titleAfter: 'algo útil.',
-      body: 'Estou aberto a oportunidades como Engenheiro de Software Sênior e Consultor Técnico no Brasil e em equipes internacionais, distribuídas ou remotas, especialmente em ambientes que valorizem autonomia, adaptabilidade e profundidade técnica.',
+      body: 'Estou aberto a oportunidades como Engenheiro de Software Sênior e Consultor Técnico no Brasil ou com equipes internacionais, distribuídas ou remotas, especialmente em ambientes que valorizem autonomia, adaptabilidade e profundidade técnica.',
       links: { email: 'E-mail ↗', phone: 'Telefone ↗', linkedin: 'LinkedIn ↗', github: 'GitHub ↗' },
     },
     footer: {
