@@ -232,7 +232,7 @@ export const translations = {
     international: {
       country: 'SYDNEY',
       countryAfter: ',<br />AUSTRÁLIA',
-      copy: 'Quatro anos no exterior fortaleceram minha comunicação, autonomia e capacidade de trabalhar entre culturas. Durante esse período, concluí estudos de desenvolvimento de software e gerenciamento de projetos enquanto vivia em Sydney.',
+      copy: 'Quatro anos no exterior fortaleceram minha comunicação, autonomia e capacidade de atuar em contextos multiculturais. Durante esse período, concluí estudos de desenvolvimento de software e gerenciamento de projetos enquanto vivia em Sydney.',
       language: 'IELTS General Training',
       band: 'Nota geral 8',
       switch: 'PT / EN',
