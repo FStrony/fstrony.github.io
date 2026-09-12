@@ -24,7 +24,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
             <span>{content.hero.middleName}</span>
             <span class="accent">{content.hero.lastName}</span>
         </h1>
-        <img class="hero-portrait" src="/profile.jpg" alt={content.hero.portraitAlt} loading="eager" fetchpriority="high" />
+        <img class="hero-portrait" src="/profile.jpg" srcset="/profile-mobile.jpg 385w, /profile.jpg 1026w" sizes="(max-width: 820px) 385px, 290px" alt={content.hero.portraitAlt} loading="eager" fetchpriority="high" />
     </div>
     <div class="hero-bottom">
         <p>{content.hero.description}</p>
@@ -51,8 +51,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 </section>
 
 <section class="numbers" aria-label={content.sections.profile}>
-    {content.numbers.map((item, i) => <div><strong>{item.value}</strong><span
-            data-i18n={`numbers.${i}.label`}>{item.label}</span></div>)}
+    {content.numbers.map((item, i) => <div><strong>{item.value}</strong><span data-i18n={`numbers.${i}.label`}>{item.label}</span></div>)}
 </section>
 
 <section class="section" id="engineering">
@@ -62,11 +61,9 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
         <h2 class="section-title">
             <span>{content.engineering.titleBefore}</span><br /><span>{content.engineering.titleAfter}</span></h2>
         <div class="stack-list">
-            {content.engineering.stack.map(([title, items], i) => <div class="stack-row"><span class="meta">0{i +
-                    1}</span>
+            {content.engineering.stack.map(([title, items], i) => <div class="stack-row"><span class="meta">0{i + 1}</span>
                 <h3 data-i18n={`engineering.stack.${i}.title`}>{title}</h3>
-                <div class="stack-items">{items.map((item, j) => <span class="tag"
-                        data-i18n={`engineering.stack.${i}.items.${j}`}>{item}</span>)}</div>
+                <div class="stack-items">{items.map((item, j) => <span class="tag" data-i18n={`engineering.stack.${i}.items.${j}`}>{item}</span>)}</div>
             </div>)}
         </div>
     </div>
@@ -99,14 +96,12 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
         <h2 class="section-title"><span>{content.work.titleBefore}</span><br /><span>{content.work.titleAfter}</span>
         </h2>
         {content.work.projects.map((project, i) => <article class="case">
-            <div class="case-top"><span class="case-no">{project.no}</span><span class="eyebrow"
-                    data-i18n={`work.projects.${i}.label`}>{project.label}</span></div>
+            <div class="case-top"><span class="case-no">{project.no}</span><span class="eyebrow" data-i18n={`work.projects.${i}.label`}>{project.label}</span></div>
             <div class="case-main">
                 <div>
                     <h3 data-i18n={`work.projects.${i}.title`}>{project.title}</h3>
                     <p class="case-intro" data-i18n={`work.projects.${i}.intro`}>{project.intro}</p>
-                    <div class="tags">{project.tags.map((tag, j) => <span class="tag"
-                            data-i18n={`work.projects.${i}.tags.${j}`}>{tag}</span>)}</div>
+                    <div class="tags">{project.tags.map((tag, j) => <span class="tag" data-i18n={`work.projects.${i}.tags.${j}`}>{tag}</span>)}</div>
                 </div>
                 <div class="case-details">
                     <div><small>{content.work.labels.problem}</small>
@@ -128,8 +123,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
 <section class="section international">
     <h2 class="side-label"><span>05 / </span><span>{content.sections.international}</span></h2>
     <div>
-        <div class="country"><span>{content.international.country}</span><span
-                set:html={content.international.countryAfter}></span></div>
+        <div class="country"><span>{content.international.country}</span><span set:html={content.international.countryAfter}></span></div>
         <p class="large-copy">{content.international.copy}</p>
         <div class="language-line">
             <span>{content.international.language}</span><strong>{content.international.band}</strong>
@@ -144,8 +138,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
         <h2 class="section-title">
             <span>{content.education.titleBefore}</span><br /><span>{content.education.titleAfter}</span></h2>
         <div class="education-list">
-            {content.education.items.map((item, i) => <article><span class="meta"
-                    data-i18n={`education.items.${i}.period`}>{item.period}</span>
+            {content.education.items.map((item, i) => <article><span class="meta" data-i18n={`education.items.${i}.period`}>{item.period}</span>
                 <h3 data-i18n={`education.items.${i}.degree`}>{item.degree}</h3>
                 <p data-i18n={`education.items.${i}.institution`}>{item.institution}</p>
             </article>)}
@@ -171,8 +164,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
         <div class="contact-links">
             <a href="mailto:fstrony@gmail.com">{content.contact.links.email}</a>
             <a href="tel:+5511972625933">{content.contact.links.phone}</a>
-            <a href="https://www.linkedin.com/in/fstrony/" target="_blank"
-                rel="noreferrer">{content.contact.links.linkedin}</a>
+            <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">{content.contact.links.linkedin}</a>
             <a href="https://github.com/FStrony" target="_blank" rel="noreferrer">{content.contact.links.github}</a>
             <a href={content.resume.url} target="_blank" rel="noopener noreferrer">{content.resume.label}</a>
         </div>
