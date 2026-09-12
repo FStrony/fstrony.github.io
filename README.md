@@ -373,7 +373,7 @@ dist/
 ├── public/
 │   ├── favicon.svg
 │   ├── og.svg
-│   ├── profile.png
+│   ├── profile.jpg
 │   ├── robots.txt
 │   └── resume/
 ├── src/
