@@ -29,9 +29,9 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
     <div class="hero-bottom">
         <p>{content.hero.description}</p>
         <div class="hero-links">
-            <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://github.com/FStrony" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href={content.resume.url} target="_blank" rel="noopener noreferrer">{content.resume.label}</a>
+            <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-umami-event="linkedin_click">LinkedIn ↗</a>
+            <a href="https://github.com/FStrony" target="_blank" rel="noreferrer" data-umami-event="github_click">GitHub ↗</a>
+            <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-umami-event="resume_download">{content.resume.label}</a>
             <a href="#work">{content.hero.selectedWork}</a>
         </div>
     </div>
@@ -95,7 +95,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
         <p class="kicker">{content.work.kicker}</p>
         <h2 class="section-title"><span>{content.work.titleBefore}</span><br /><span>{content.work.titleAfter}</span>
         </h2>
-        {content.work.projects.map((project, i) => <article class="case">
+        {content.work.projects.map((project, i) => <article class="case" data-analytics-case={project.no}>
             <div class="case-top"><span class="case-no">{project.no}</span><span class="eyebrow" data-i18n={`work.projects.${i}.label`}>{project.label}</span></div>
             <div class="case-main">
                 <div>
@@ -162,11 +162,11 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
         <h2><span>{content.contact.titleBefore}</span><br /><span>{content.contact.titleAfter}</span></h2>
         <p>{content.contact.body}</p>
         <div class="contact-links">
-            <a href="mailto:fstrony@gmail.com">{content.contact.links.email}</a>
-            <a href="tel:+5511972625933">{content.contact.links.phone}</a>
-            <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">{content.contact.links.linkedin}</a>
-            <a href="https://github.com/FStrony" target="_blank" rel="noreferrer">{content.contact.links.github}</a>
-            <a href={content.resume.url} target="_blank" rel="noopener noreferrer">{content.resume.label}</a>
+            <a href="mailto:fstrony@gmail.com" data-umami-event="email_click">{content.contact.links.email}</a>
+            <a href="tel:+5511972625933" data-umami-event="phone_click">{content.contact.links.phone}</a>
+            <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-umami-event="linkedin_click">{content.contact.links.linkedin}</a>
+            <a href="https://github.com/FStrony" target="_blank" rel="noreferrer" data-umami-event="github_click">{content.contact.links.github}</a>
+            <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-umami-event="resume_download">{content.resume.label}</a>
         </div>
     </div>
 </section>
