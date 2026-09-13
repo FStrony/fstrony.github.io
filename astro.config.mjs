@@ -5,7 +5,10 @@ export default defineConfig({
   site: 'https://fstrony.github.io',
   integrations: [
     sitemap({
-      filter: (page) => new URL(page).pathname !== '/',
+      filter: (page) => {
+        const pathname = new URL(page).pathname;
+        return pathname !== '/' && pathname !== '/privacy/';
+      },
     }),
   ],
   i18n: {
