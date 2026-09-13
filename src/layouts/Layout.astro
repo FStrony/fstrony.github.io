@@ -8,14 +8,17 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site!;
+const isPrivacyPage = Astro.url.pathname.includes('/privacy/');
+const homePath = locale === 'pt-BR' ? '/pt-BR/' : '/en/';
 const canonical = new URL(Astro.url.pathname, siteUrl).href;
-const englishUrl = new URL('/en/', siteUrl).href;
-const portugueseUrl = new URL('/pt-BR/', siteUrl).href;
+const englishUrl = new URL(isPrivacyPage ? '/en/privacy/' : '/en/', siteUrl).href;
+const portugueseUrl = new URL(isPrivacyPage ? '/pt-BR/privacy/' : '/pt-BR/', siteUrl).href;
 const defaultUrl = new URL('/', siteUrl).href;
 const ogLocale = locale === 'pt-BR' ? 'pt_BR' : 'en_GB';
 const alternateOgLocale = locale === 'pt-BR' ? 'en_GB' : 'pt_BR';
 const ogImage = new URL('/og.svg', siteUrl).href;
 const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const sectionHref = (section) => isPrivacyPage ? `${homePath}#${section}` : `#${section}`;
 ---
 <!doctype html>
 <html lang={locale}>
@@ -56,15 +59,15 @@ const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
-      <a class="brand" href="#home"><span>FA</span> / FERNANDO AUGUSTO</a>
+      <a class="brand" href={homePath}><span>FA</span> / FERNANDO AUGUSTO</a>
       <nav class="desktop-nav" aria-label={locale === 'pt-BR' ? 'Navegação principal' : 'Main navigation'}>
-        <a href="#about">{nav.about}</a><a href="#engineering">{nav.engineering}</a><a href="#experience">{nav.experience}</a><a href="#work">{nav.work}</a><a href="#contact">{nav.contact}</a>
+        <a href={sectionHref('about')}>{nav.about}</a><a href={sectionHref('engineering')}>{nav.engineering}</a><a href={sectionHref('experience')}>{nav.experience}</a><a href={sectionHref('work')}>{nav.work}</a><a href={sectionHref('contact')}>{nav.contact}</a>
       </nav>
       <a class="top-cta" href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-umami-event="linkedin_click">{nav.linkedin}</a>
       <button class="menu-toggle" type="button" aria-label={nav.openMenu} aria-expanded="false" aria-controls="mobile-navigation">{nav.menu}</button>
     </header>
     <nav class="mobile-panel" id="mobile-navigation" aria-label={locale === 'pt-BR' ? 'Navegação móvel' : 'Mobile navigation'} aria-hidden="true">
-      <a href="#about">{nav.about}</a><a href="#engineering">{nav.engineering}</a><a href="#experience">{nav.experience}</a><a href="#work">{nav.work}</a><a href="#contact">{nav.contact}</a>
+      <a href={sectionHref('about')}>{nav.about}</a><a href={sectionHref('engineering')}>{nav.engineering}</a><a href={sectionHref('experience')}>{nav.experience}</a><a href={sectionHref('work')}>{nav.work}</a><a href={sectionHref('contact')}>{nav.contact}</a>
     </nav>
     <main id="main-content"><slot /></main>
     <footer class="footer"><span>Fernando Augusto Santos</span><span>{footer.role}</span><span>{footer.copyright}</span></footer>
