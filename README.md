@@ -42,6 +42,8 @@ The website is intentionally designed as a small but production-oriented project
 - ♿ Automated accessibility testing
 - 🔗 Automated link validation
 - ✅ HTML validation
+- 📊 Privacy-focused analytics with Umami Cloud
+- 🔐 Dedicated localised Privacy Notice with a plain-language privacy disclaimer
 - ⚙️ GitHub Actions CI/CD
 - 🚀 Automated deployment to GitHub Pages
 - 🔄 Automatic `main → develop` synchronisation
@@ -59,6 +61,7 @@ The website is intentionally designed as a small but production-oriented project
 | Styling | CSS |
 | Testing | Playwright |
 | Accessibility | axe-core |
+| Analytics | Umami Cloud |
 | CI/CD | GitHub Actions |
 | Hosting | GitHub Pages |
 | Versioning | Semantic Versioning |
@@ -73,7 +76,8 @@ The application intentionally keeps **content** separate from **presentation**.
 ```text
 src/
 ├── components/
-│   └── Portfolio.astro
+│   ├── Portfolio.astro
+│   └── PrivacyNotice.astro
 ├── content/
 │   └── translations.ts
 ├── layouts/
@@ -81,16 +85,20 @@ src/
 └── pages/
     ├── index.astro
     ├── en/
-    │   └── index.astro
+    │   ├── index.astro
+    │   └── privacy/
+    │       └── index.astro
     └── pt-BR/
-        └── index.astro
+        ├── index.astro
+        └── privacy/
+            └── index.astro
 ```
 
 ### Content
 
-Portfolio content is stored separately from the page markup.
+Portfolio and privacy content is stored separately from the page markup.
 
-This makes it possible to support multiple locales without duplicating the entire page structure.
+This makes it possible to support multiple locales without duplicating the entire presentation structure.
 
 ```text
 English → en-GB
@@ -99,9 +107,9 @@ Português → pt-BR
 
 ### Presentation
 
-The shared Astro component is responsible for structure and presentation, while the content layer provides locale-specific data.
+Shared Astro components are responsible for structure and presentation, while the content layer provides locale-specific data.
 
-This keeps the template easier to maintain and allows content changes without repeatedly modifying the page structure.
+The `PrivacyNotice.astro` component reuses the same layout and translation approach as the main portfolio, keeping the privacy pages consistent with the rest of the site.
 
 ---
 
@@ -117,9 +125,11 @@ The English version intentionally follows British English conventions, reflectin
 ### Routes
 
 ```text
-/        → language selector
-/en/     → English
-/pt-BR/  → Português (Brasil)
+/              → language selector
+/en/           → English
+/pt-BR/        → Português (Brasil)
+/en/privacy/   → English Privacy Notice
+/pt-BR/privacy/ → Portuguese Privacy Notice
 ```
 
 The root route detects the browser language and directs visitors to the corresponding localised version:
@@ -128,6 +138,8 @@ The root route detects the browser language and directs visitors to the correspo
 - other browsers → `/en/`
 
 The language switcher allows visitors to move directly between the two localised versions.
+
+The legacy `/privacy/` route redirects to the English Privacy Notice for compatibility, while the portfolio now links directly to the privacy page matching the selected language.
 
 The localisation approach is based on a shared presentation layer with locale-specific content, keeping the codebase compact and avoiding duplicated page structures.
 
@@ -170,6 +182,84 @@ The CI pipeline uses **Playwright** and **axe-core** to identify automatically d
 The accessibility gate helped identify and correct colour-contrast issues in the original design before the check was made mandatory for production.
 
 The goal is not to claim that automated testing proves complete accessibility. Instead, it provides a repeatable baseline for detecting common issues and prevents known regressions from silently reaching production.
+
+---
+
+## 📊 Privacy-focused Analytics
+
+The portfolio uses **Umami Cloud** for lightweight, privacy-focused website analytics.
+
+The implementation is intentionally limited to aggregate usage and useful portfolio conversion signals rather than behavioural surveillance.
+
+### Tracked metrics
+
+The website tracks:
+
+- page views;
+- English vs Portuguese page views;
+- LinkedIn clicks;
+- GitHub clicks;
+- Resume/CV clicks;
+- email clicks;
+- phone clicks;
+- Privacy Notice clicks;
+- email clicks from the Privacy Notice;
+- selected case-study views;
+- visitors reaching the end of the page;
+- standard UTM campaign parameters when present.
+
+The corresponding custom event names are:
+
+```text
+page_view                 → Umami automatic page-view measurement
+language_view
+linkedin_click
+github_click
+resume_download
+email_click
+phone_click
+privacy_click
+privacy_email_click
+case_view
+reached_end
+```
+
+### Privacy approach
+
+The current configuration:
+
+- does not use analytics cookies;
+- does not use session replay;
+- does not use heatmaps;
+- does not intentionally send names, email addresses or phone numbers to Umami;
+- restricts the production tracker to `fstrony.github.io`;
+- does not use analytics for advertising or sell analytics data.
+
+Umami's tracker is designed for privacy-focused analytics without cookies and with anonymisation of collected analytics data. The implementation here deliberately uses only the measurements needed to understand aggregate portfolio usage and professional conversion signals.
+
+The complete plain-language notice is available in [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) and through the website's [`Privacy Notice`](https://fstrony.github.io/en/privacy/).
+
+### Production configuration
+
+The Umami Website ID is intentionally not hardcoded in the repository.
+
+GitHub Actions injects it during the production build using the repository variable:
+
+```text
+UMAMI_WEBSITE_ID
+```
+
+which is mapped to the Astro public build variable:
+
+```text
+PUBLIC_UMAMI_WEBSITE_ID
+```
+
+This keeps the production analytics configuration outside the source while still allowing Astro to include the required public Website ID in the generated client-side HTML.
+
+Local builds without the production variable do not include the Umami tracker.
+
+The tracker is additionally restricted to the production hostname through Umami's `data-domains` configuration, so forks and non-production hosts do not send traffic to the production analytics property.
 
 ---
 
@@ -379,7 +469,8 @@ dist/
 │   └── resume/
 ├── src/
 │   ├── components/
-│   │   └── Portfolio.astro
+│   │   ├── Portfolio.astro
+│   │   └── PrivacyNotice.astro
 │   ├── content/
 │   │   └── translations.ts
 │   ├── layouts/
@@ -387,15 +478,20 @@ dist/
 │   └── pages/
 │       ├── index.astro
 │       ├── en/
-│       │   └── index.astro
+│       │   ├── index.astro
+│       │   └── privacy/
+│       │       └── index.astro
 │       └── pt-BR/
-│           └── index.astro
+│           ├── index.astro
+│           └── privacy/
+│               └── index.astro
 ├── .github/
 │   └── workflows/
 ├── astro.config.mjs
 ├── package.json
 ├── package-lock.json
 ├── LICENSE.txt
+├── PRIVACY_DISCLAIMER.txt
 └── README.md
 ```
 
@@ -463,6 +559,22 @@ Choosing whether a change represents a patch, minor or major release is an engin
 
 The release workflow automates the mechanical work without hiding that decision.
 
+### Why privacy-focused analytics?
+
+The portfolio benefits from understanding whether visitors reach the work and contact sections and which professional links generate interest.
+
+Umami was selected because it provides page views, referrers, UTM tracking and custom events without requiring the cookie-based analytics model used by many traditional analytics platforms.
+
+The implementation deliberately avoids session replay and heatmaps because they provide little value for this personal portfolio compared with their additional privacy implications.
+
+### Why a dedicated Privacy Notice?
+
+The analytics implementation is intentionally privacy-focused, but transparency still matters.
+
+A dedicated localised Privacy Notice explains what the website measures, what it deliberately does not send to the analytics service, how Umami is configured, and how visitors can contact the site operator regarding their data rights where applicable.
+
+The notice is implemented as a shared component with translated content rather than duplicated English and Portuguese markup.
+
 ### Why avoid excessive tooling?
 
 This repository deliberately avoids adding enterprise tooling solely for appearance.
@@ -473,6 +585,7 @@ The objective is to use automation where it provides practical value:
 Build
 Quality
 Accessibility
+Analytics
 Deployment
 Releases
 Branch governance
@@ -498,6 +611,8 @@ Unless otherwise stated, this includes:
 - other personal or proprietary materials.
 
 The MIT licence therefore applies to the source code and associated software, **not automatically to the personal materials contained within the repository**.
+
+The repository also includes a separate [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) describing the analytics and privacy approach used by the public website.
 
 See [`LICENSE.txt`](./LICENSE.txt) for the complete terms.
 
