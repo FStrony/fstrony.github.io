@@ -42,6 +42,7 @@ The website is intentionally designed as a small but production-oriented project
 - ♿ Automated accessibility testing
 - 🔗 Automated link validation
 - ✅ HTML validation
+- 📊 Privacy-focused analytics with Umami Cloud
 - ⚙️ GitHub Actions CI/CD
 - 🚀 Automated deployment to GitHub Pages
 - 🔄 Automatic `main → develop` synchronisation
@@ -59,6 +60,7 @@ The website is intentionally designed as a small but production-oriented project
 | Styling | CSS |
 | Testing | Playwright |
 | Accessibility | axe-core |
+| Analytics | Umami Cloud |
 | CI/CD | GitHub Actions |
 | Hosting | GitHub Pages |
 | Versioning | Semantic Versioning |
@@ -80,6 +82,7 @@ src/
 │   └── Layout.astro
 └── pages/
     ├── index.astro
+    ├── privacy.astro
     ├── en/
     │   └── index.astro
     └── pt-BR/
@@ -120,6 +123,7 @@ The English version intentionally follows British English conventions, reflectin
 /        → language selector
 /en/     → English
 /pt-BR/  → Português (Brasil)
+/privacy/ → privacy notice
 ```
 
 The root route detects the browser language and directs visitors to the corresponding localised version:
@@ -170,6 +174,64 @@ The CI pipeline uses **Playwright** and **axe-core** to identify automatically d
 The accessibility gate helped identify and correct colour-contrast issues in the original design before the check was made mandatory for production.
 
 The goal is not to claim that automated testing proves complete accessibility. Instead, it provides a repeatable baseline for detecting common issues and prevents known regressions from silently reaching production.
+
+---
+
+## 📊 Privacy-focused Analytics
+
+The portfolio uses **Umami Cloud** for lightweight, privacy-focused website analytics.
+
+The implementation is intentionally limited to aggregate usage and useful portfolio conversion signals rather than behavioural surveillance.
+
+### Tracked metrics
+
+The website tracks:
+
+- page views;
+- English vs Portuguese page views;
+- LinkedIn clicks;
+- GitHub clicks;
+- Resume/CV clicks;
+- email clicks;
+- phone clicks;
+- selected case-study views;
+- visitors reaching the end of the page;
+- standard UTM campaign parameters when present.
+
+### Privacy approach
+
+The current configuration:
+
+- does not use analytics cookies;
+- does not use session replay;
+- does not use heatmaps;
+- does not intentionally send names, email addresses or phone numbers to Umami;
+- restricts the production tracker to `fstrony.github.io`;
+- does not use analytics for advertising or sell analytics data.
+
+Umami states that its tracker does not use cookies and anonymises collected analytics data. It can collect information such as page views, referrers, browser, operating system, device type and country. citeturn0search1turn0search8
+
+The complete plain-language notice is available in [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) and through the website's [`Privacy Notice`](/privacy/).
+
+### Production configuration
+
+The Umami Website ID is intentionally not hardcoded in the repository.
+
+GitHub Actions injects it during the production build using the repository variable:
+
+```text
+UMAMI_WEBSITE_ID
+```
+
+which is mapped to the Astro public build variable:
+
+```text
+PUBLIC_UMAMI_WEBSITE_ID
+```
+
+This keeps the production analytics configuration outside the source while still allowing Astro to include the required public Website ID in the generated client-side HTML.
+
+Local builds without the production variable do not include the Umami tracker.
 
 ---
 
@@ -386,6 +448,7 @@ dist/
 │   │   └── Layout.astro
 │   └── pages/
 │       ├── index.astro
+│       ├── privacy.astro
 │       ├── en/
 │       │   └── index.astro
 │       └── pt-BR/
@@ -396,6 +459,7 @@ dist/
 ├── package.json
 ├── package-lock.json
 ├── LICENSE.txt
+├── PRIVACY_DISCLAIMER.txt
 └── README.md
 ```
 
@@ -463,6 +527,14 @@ Choosing whether a change represents a patch, minor or major release is an engin
 
 The release workflow automates the mechanical work without hiding that decision.
 
+### Why privacy-focused analytics?
+
+The portfolio benefits from understanding whether visitors reach the work and contact sections and which professional links generate interest.
+
+Umami was selected because it provides page views, referrers, UTM tracking and custom events without requiring the cookie-based analytics model used by many traditional analytics platforms. citeturn0search0turn0search6
+
+The implementation deliberately avoids session replay and heatmaps because they provide little value for this personal portfolio compared with their additional privacy implications.
+
 ### Why avoid excessive tooling?
 
 This repository deliberately avoids adding enterprise tooling solely for appearance.
@@ -473,6 +545,7 @@ The objective is to use automation where it provides practical value:
 Build
 Quality
 Accessibility
+Analytics
 Deployment
 Releases
 Branch governance
@@ -498,6 +571,8 @@ Unless otherwise stated, this includes:
 - other personal or proprietary materials.
 
 The MIT licence therefore applies to the source code and associated software, **not automatically to the personal materials contained within the repository**.
+
+The repository also includes a separate [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) describing the analytics and privacy approach used by the public website.
 
 See [`LICENSE.txt`](./LICENSE.txt) for the complete terms.
 
