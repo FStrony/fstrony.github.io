@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://fstrony.github.io/">🌐 Live Website</a> ·
+  <a href="https://fstrony.github.io/?utm_source=github_readme">🌐 Live Website</a> ·
   <a href="https://www.linkedin.com/in/fstrony/">💼 LinkedIn</a> ·
   <a href="https://github.com/FStrony">🐙 GitHub</a>
 </p>
@@ -237,7 +237,7 @@ The current configuration:
 
 Umami's tracker is designed for privacy-focused analytics without cookies and with anonymisation of collected analytics data. The implementation here deliberately uses only the measurements needed to understand aggregate portfolio usage and professional conversion signals.
 
-The complete plain-language notice is available in [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) and through the website's [`Privacy Notice`](https://fstrony.github.io/en/privacy/).
+The complete plain-language notice is available in [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) and through the website's [`Privacy Notice`](https://fstrony.github.io/en/privacy/?utm_source=github_readme).
 
 ### Production configuration
 
@@ -626,7 +626,7 @@ See [`LICENSE.txt`](./LICENSE.txt) for the complete terms.
 
 Java · Spring Boot · AWS · Microservices · Backend Architecture
 
-🌐 [fstrony.github.io](https://fstrony.github.io/)  
+🌐 [fstrony.github.io](https://fstrony.github.io/?utm_source=github_readme)  
 💼 [LinkedIn](https://www.linkedin.com/in/fstrony/)  
 🐙 [GitHub](https://github.com/FStrony)
 
