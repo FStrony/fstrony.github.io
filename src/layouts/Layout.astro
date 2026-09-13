@@ -15,6 +15,7 @@ const defaultUrl = new URL('/', siteUrl).href;
 const ogLocale = locale === 'pt-BR' ? 'pt_BR' : 'en_GB';
 const alternateOgLocale = locale === 'pt-BR' ? 'en_GB' : 'pt_BR';
 const ogImage = new URL('/og.svg', siteUrl).href;
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
 ---
 <!doctype html>
 <html lang={locale}>
@@ -30,6 +31,7 @@ const ogImage = new URL('/og.svg', siteUrl).href;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    {umamiWebsiteId && <script defer src="https://cloud.umami.is/script.js" data-website-id={umamiWebsiteId} data-domains="fstrony.github.io" data-do-not-track="true"></script>}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -58,7 +60,7 @@ const ogImage = new URL('/og.svg', siteUrl).href;
       <nav class="desktop-nav" aria-label={locale === 'pt-BR' ? 'Navegação principal' : 'Main navigation'}>
         <a href="#about">{nav.about}</a><a href="#engineering">{nav.engineering}</a><a href="#experience">{nav.experience}</a><a href="#work">{nav.work}</a><a href="#contact">{nav.contact}</a>
       </nav>
-      <a class="top-cta" href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer">{nav.linkedin}</a>
+      <a class="top-cta" href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-umami-event="linkedin_click">{nav.linkedin}</a>
       <button class="menu-toggle" type="button" aria-label={nav.openMenu} aria-expanded="false" aria-controls="mobile-navigation">{nav.menu}</button>
     </header>
     <nav class="mobile-panel" id="mobile-navigation" aria-label={locale === 'pt-BR' ? 'Navegação móvel' : 'Mobile navigation'} aria-hidden="true">
@@ -82,6 +84,34 @@ const ogImage = new URL('/og.svg', siteUrl).href;
       panel?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenuState(false)));
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && panel?.classList.contains('open')) { setMenuState(false); btn?.focus(); }
+      });
+
+      const trackEvent = (name, data) => window.umami?.track(name, data);
+      document.addEventListener('DOMContentLoaded', () => {
+        trackEvent('language_view', { language: locale });
+
+        if (!('IntersectionObserver' in window)) return;
+
+        const caseObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const caseId = entry.target.getAttribute('data-analytics-case');
+            if (caseId) trackEvent('case_view', { case: caseId });
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.25 });
+
+        document.querySelectorAll('[data-analytics-case]').forEach((element) => caseObserver.observe(element));
+
+        const footer = document.querySelector('.footer');
+        if (footer) {
+          const endObserver = new IntersectionObserver(([entry]) => {
+            if (!entry.isIntersecting) return;
+            trackEvent('reached_end');
+            endObserver.disconnect();
+          }, { threshold: 0.5 });
+          endObserver.observe(footer);
+        }
       });
     </script>
   </body>
