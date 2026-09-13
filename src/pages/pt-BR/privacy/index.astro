@@ -1,0 +1,17 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PrivacyNotice from '../../../components/PrivacyNotice.astro';
+import { translations } from '../../../content/translations';
+
+const content = translations.pt;
+---
+
+<Layout
+  title={`${content.privacy.title} | Fernando Augusto Santos`}
+  description="Aviso de privacidade sobre os analytics utilizados pelo portfólio de Fernando Augusto Santos."
+  locale={content.htmlLang}
+  nav={content.nav}
+  footer={content.footer}
+>
+  <PrivacyNotice content={content} />
+</Layout>
