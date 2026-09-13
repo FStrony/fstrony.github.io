@@ -5,6 +5,13 @@ https://fstrony.github.io/
 
 Last updated: 2026-09-12
 
+DATA CONTROLLER
+
+For the analytics described in this notice, the website operator is Fernando Augusto Santos.
+Contact: fstrony@gmail.com
+
+PURPOSE
+
 This website uses privacy-focused analytics provided by Umami Cloud to understand aggregate website usage and improve the portfolio.
 
 WHAT IS COLLECTED
@@ -36,9 +43,9 @@ For more information, see Umami's documentation and privacy information:
 https://umami.is/
 https://docs.umami.is/docs/faq
 
-CONTACT
+YOUR RIGHTS
 
-For questions about this website or this privacy notice, contact:
+Where applicable under data-protection law, you may contact the website operator to ask about the processing of your personal data and exercise applicable rights, such as access, correction, anonymisation, blocking or deletion. Requests can be sent to:
 fstrony@gmail.com
 
 IMPORTANT
@@ -53,6 +60,13 @@ Site: Portfólio de Fernando Augusto Santos
 https://fstrony.github.io/
 
 Última atualização: 12/09/2026
+
+CONTROLADOR
+
+Para o analytics descrito neste aviso, o responsável pelo site é Fernando Augusto Santos.
+Contato: fstrony@gmail.com
+
+FINALIDADE
 
 Este site utiliza analytics com foco em privacidade, fornecido pelo Umami Cloud, para compreender o uso agregado do site e melhorar o portfólio.
 
@@ -85,9 +99,9 @@ Para mais informações, consulte a documentação e as informações de privaci
 https://umami.is/
 https://docs.umami.is/docs/faq
 
-CONTATO
+DIREITOS DO TITULAR
 
-Para dúvidas sobre este site ou sobre este aviso de privacidade:
+Quando aplicável pela legislação de proteção de dados, você pode entrar em contato com o responsável pelo site para obter informações sobre o tratamento de seus dados pessoais e exercer os direitos aplicáveis, como acesso, correção, anonimização, bloqueio ou eliminação. Os pedidos podem ser enviados para:
 fstrony@gmail.com
 
 IMPORTANTE
