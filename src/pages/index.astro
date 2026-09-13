@@ -3,7 +3,9 @@ const redirectScript = `
   const browserLocale = navigator.language?.toLowerCase() || 'en';
   const locale = browserLocale.startsWith('pt') ? 'pt-BR' : 'en';
 
-  window.location.replace('/' + locale + '/');
+  window.location.replace(
+    '/' + locale + '/' + window.location.search + window.location.hash
+  );
 `;
 ---
 
