@@ -147,8 +147,8 @@ The localisation approach is based on a shared presentation layer with locale-sp
 
 The portfolio provides localised Resume/CV documents that follow the selected site language:
 
-- 🇬🇧 English: [`/resume/Fernando_Augusto_Santos_Resume_EN.pdf`](/resume/Fernando_Augusto_Santos_Resume_EN.pdf)
-- 🇧🇷 Português (Brasil): [`/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf`](/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf)
+- 🇬🇧 English: [`/public/resume/Fernando_Augusto_Santos_Resume_EN.pdf`](/public/resume/Fernando_Augusto_Santos_Resume_EN.pdf)
+- 🇧🇷 Português (Brasil): [`/public/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf`](/public/resume/Fernando_Augusto_Santos_CV_PT-BR.pdf)
 
 The Resume/CV link updates with the selected language and opens the corresponding PDF in a new tab.
 
