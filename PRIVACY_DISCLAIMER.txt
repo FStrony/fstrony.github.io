@@ -1,0 +1,95 @@
+PRIVACY NOTICE
+
+Website: Fernando Augusto Santos Portfolio
+https://fstrony.github.io/
+
+Last updated: 2026-09-12
+
+This website uses privacy-focused analytics provided by Umami Cloud to understand aggregate website usage and improve the portfolio.
+
+WHAT IS COLLECTED
+
+The analytics service may collect anonymised technical and usage information such as:
+- page views;
+- referrer information;
+- browser, operating system and device type;
+- approximate geographic information such as country/region/city;
+- language;
+- UTM campaign parameters when present;
+- selected anonymous interaction events, including clicks on LinkedIn, GitHub, Resume/CV, email and phone links, views of selected case studies, language views and reaching the end of a page.
+
+No names, email addresses, phone numbers or other personally identifying information are intentionally sent to the analytics service by this website.
+
+PRIVACY MEASURES
+
+- The analytics tracker does not use cookies.
+- The website does not use session replay or heatmaps as part of this analytics setup.
+- Analytics data is used for aggregate website measurement and improvement.
+- The analytics configuration restricts tracking to the production hostname: fstrony.github.io.
+- The website does not sell analytics data or use it for advertising.
+
+THIRD-PARTY SERVICE
+
+Analytics are provided by Umami Cloud. Umami describes its analytics as privacy-focused, without cookies and without automatic collection of personal data. Umami Cloud operates servers in the United States and European Union.
+
+For more information, see Umami's documentation and privacy information:
+https://umami.is/
+https://docs.umami.is/docs/faq
+
+CONTACT
+
+For questions about this website or this privacy notice, contact:
+fstrony@gmail.com
+
+IMPORTANT
+
+This document is a plain-language privacy notice for this personal portfolio. It is not legal advice and does not replace any rights or obligations that may apply under applicable data-protection laws.
+
+---
+
+AVISO DE PRIVACIDADE
+
+Site: Portfólio de Fernando Augusto Santos
+https://fstrony.github.io/
+
+Última atualização: 12/09/2026
+
+Este site utiliza analytics com foco em privacidade, fornecido pelo Umami Cloud, para compreender o uso agregado do site e melhorar o portfólio.
+
+O QUE É COLETADO
+
+O serviço de analytics pode coletar informações técnicas e de uso anonimizadas, como:
+- visualizações de páginas;
+- informações de referência (referrer);
+- navegador, sistema operacional e tipo de dispositivo;
+- informações geográficas aproximadas, como país/região/cidade;
+- idioma;
+- parâmetros UTM de campanhas, quando presentes;
+- eventos anônimos selecionados de interação, incluindo cliques em LinkedIn, GitHub, Currículo, e-mail e telefone, visualizações dos cases selecionados, visualizações de idioma e chegada ao final da página.
+
+O site não envia intencionalmente ao serviço de analytics nomes, endereços de e-mail, números de telefone ou outras informações que identifiquem diretamente uma pessoa.
+
+MEDIDAS DE PRIVACIDADE
+
+- O tracker de analytics não utiliza cookies.
+- O site não utiliza session replay ou heatmaps nesta configuração de analytics.
+- Os dados de analytics são utilizados para medição agregada e melhoria do site.
+- A configuração do analytics restringe o rastreamento ao hostname de produção: fstrony.github.io.
+- O site não vende dados de analytics nem os utiliza para publicidade.
+
+SERVIÇO DE TERCEIROS
+
+O analytics é fornecido pelo Umami Cloud. O Umami descreve seu serviço de analytics como focado em privacidade, sem cookies e sem coleta automática de dados pessoais. O Umami Cloud opera servidores nos Estados Unidos e na União Europeia.
+
+Para mais informações, consulte a documentação e as informações de privacidade do Umami:
+https://umami.is/
+https://docs.umami.is/docs/faq
+
+CONTATO
+
+Para dúvidas sobre este site ou sobre este aviso de privacidade:
+fstrony@gmail.com
+
+IMPORTANTE
+
+Este documento é um aviso de privacidade em linguagem simples para este portfólio pessoal. Não constitui aconselhamento jurídico e não substitui quaisquer direitos ou obrigações previstos pelas leis de proteção de dados aplicáveis.
