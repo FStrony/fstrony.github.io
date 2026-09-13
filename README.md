@@ -237,7 +237,7 @@ The current configuration:
 
 Umami's tracker is designed for privacy-focused analytics without cookies and with anonymisation of collected analytics data. The implementation here deliberately uses only the measurements needed to understand aggregate portfolio usage and professional conversion signals.
 
-The complete plain-language notice is available in [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) and through the website's [`Privacy Notice`](https://fstrony.github.io/en/privacy/?utm_source=github_readme).
+The complete plain-language notice is available in [`PRIVACY.md`](./PRIVACY.md) and through the website's [`Privacy Notice`](https://fstrony.github.io/en/privacy/?utm_source=github_readme).
 
 ### Production configuration
 
@@ -491,7 +491,7 @@ dist/
 ├── package.json
 ├── package-lock.json
 ├── LICENSE.txt
-├── PRIVACY_DISCLAIMER.txt
+├── PRIVACY.md
 └── README.md
 ```
 
@@ -612,7 +612,7 @@ Unless otherwise stated, this includes:
 
 The MIT licence therefore applies to the source code and associated software, **not automatically to the personal materials contained within the repository**.
 
-The repository also includes a separate [`PRIVACY_DISCLAIMER.txt`](./PRIVACY_DISCLAIMER.txt) describing the analytics and privacy approach used by the public website.
+The repository also includes a separate [`PRIVACY.md`](./PRIVACY.md) describing the analytics and privacy approach used by the public website.
 
 See [`LICENSE.txt`](./LICENSE.txt) for the complete terms.
 
