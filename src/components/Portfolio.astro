@@ -167,7 +167,7 @@ const alternateUrl = getRelativeLocaleUrl(alternateLocale, '', {
             <a href="https://www.linkedin.com/in/fstrony/" target="_blank" rel="noreferrer" data-umami-event="linkedin_click">{content.contact.links.linkedin}</a>
             <a href="https://github.com/FStrony" target="_blank" rel="noreferrer" data-umami-event="github_click">{content.contact.links.github}</a>
             <a href={content.resume.url} target="_blank" rel="noopener noreferrer" data-umami-event="resume_download">{content.resume.label}</a>
-            <a href="/privacy/">{currentLocale === 'pt-BR' ? 'Privacidade' : 'Privacy'}</a>
+            <a href={currentLocale === 'pt-BR' ? '/pt-BR/privacy/' : '/en/privacy/'} data-umami-event="privacy_click">{currentLocale === 'pt-BR' ? 'Privacidade' : 'Privacy'}</a>
         </div>
     </div>
 </section>
