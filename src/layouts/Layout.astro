@@ -71,7 +71,7 @@ const sectionHref = (section) => isPrivacyPage ? `${homePath}#${section}` : `#${
     </nav>
     <main id="main-content"><slot /></main>
     <footer class="footer"><span>Fernando Augusto Santos</span><span>{footer.role}</span><span>{footer.copyright}</span></footer>
-    <script>
+    <script define:vars={{ locale }}>
       const btn = document.querySelector('.menu-toggle');
       const panel = document.querySelector('.mobile-panel');
       const setMenuState = (open) => {
