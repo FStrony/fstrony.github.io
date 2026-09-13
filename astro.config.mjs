@@ -3,9 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://fstrony.github.io',
-  redirects: {
-    '/privacy/': '/en/privacy/',
-  },
   integrations: [
     sitemap({
       filter: (page) => new URL(page).pathname !== '/',
